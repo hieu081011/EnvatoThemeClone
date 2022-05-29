@@ -1,0 +1,120 @@
+.priceRange-container{
+    & .header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding-bottom: 10px;
+        border-bottom:solid 1px #F5F5F5;;
+        & >h2{
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        & >button{
+            background-color: transparent;
+            color: #858585;
+            font-size: 1.5rem;
+            transition: linear .2s;
+            :hover{
+                cursor: pointer;
+            }    
+        }
+    }
+    & .input-wrapper{
+        & .price-display{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            & >input{
+                &::-webkit-inner-spin-button{
+                    -webkit-appearance: none;
+                }
+                width: 40px;
+                border-bottom:1px solid #E1E1E1;
+                padding: 5px 10px;
+                margin-right: 10px;
+            }
+            & >h2{
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin-right: 90px;
+            }
+            & >div{
+                margin-right: 20px;
+                transform: scale(1.5);
+            }
+            & >button{
+                right: 0;
+                padding: 5px 15px 7px 15px;
+                color: white;
+                background-color: #E1A512;
+                font-size: 1rem;
+                font-weight: 600;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+        & .slider-display{
+            & .MuiSlider-active{
+                box-shadow: none!important;
+            }
+            & .MuiSlider-rail{
+                height: 7px!important;
+                color:#DADADA;
+            }
+            & .MuiSlider-track{
+                height: 7px!important;
+                color: #838383;
+            }
+            & .MuiSlider-thumb{
+                width: 10px;
+                height: 16px;
+                border-radius: 0px!important;
+                color: black;
+                position: absolute;
+                pointer-events: none;
+                &:focus{
+                    box-shadow: none!important;
+                }
+                & .PrivateValueLabel-offset-3{
+                        transform: translateY(0px);
+                    & .PrivateValueLabel-circle-4{
+                        transform: rotate(0deg);
+                        width: 35px;
+                        border-radius: 0px!important;
+                        height: 20px;
+                        position: relative;
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            height: 0px;
+                            width: 0px;
+                            bottom: -20px;
+                            left:9px;
+                            border-top: 10px solid  transparent;
+                            border-bottom: 10px solid  transparent;
+                            border-left: 5px solid  transparent;
+                            border-right: 5px solid  transparent;
+                            border-top-color: black;
+                           
+                        }
+                        & .PrivateValueLabel-label-5{
+                            transform: rotate(0deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.rotate{
+    & .header{
+        & >button{
+            transform: rotate(-90deg);
+        }
+    }
+    & .input-wrapper{
+        display: none;
+    }
+}

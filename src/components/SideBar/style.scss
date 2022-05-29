@@ -1,0 +1,30 @@
+.sidebar-container{
+    width: 320px;
+    border:solid 5px #F5F5F5;
+    padding: 15px;
+    font-family: Helvetica, sans-serif;
+    & >h2{
+        font-size: 1.3rem;
+        font-weight: 500;
+        border-bottom:solid 1px #F5F5F5;
+        padding-bottom: 12px;
+        position: relative;
+        margin-bottom: 15px;
+        &::before{
+            content: "";
+            background: black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 80px;
+        }
+    }
+    & >h3{
+        font-size: 1.3rem;
+        font-weight: 600;
+        border-bottom:solid 1px #F5F5F5;
+        padding-bottom: 12px;
+        margin-bottom: 15px;
+    }
+}

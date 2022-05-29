@@ -1,0 +1,93 @@
+.customImage-container{
+    
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &:before{
+        content: "";
+        background: #CACACA;
+        position: absolute;
+        height: 1px;
+        width: 90%;
+        bottom: 0px;
+        box-shadow: 0 3px 0 0 #CACACA;
+    }
+    
+    & .image-container{
+        
+        
+        position: relative;
+        width: 100%;
+        aspect-ratio: 2/2;
+        & .first-img{
+           position: absolute; 
+           opacity: 0;
+           transition:linear 0.3s;
+           display: block;
+        }
+        & >img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            display: block;
+        }
+    }
+    & .button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: hidden;
+        position: absolute;
+        bottom: 3px;
+        left: 50%;
+    transform: translateX(-50%);
+        
+        & .second-button{
+            &:after{
+                content: "";
+                background: #CACACA;
+                position: absolute;
+                top: 6px;
+                left: 0;
+                height: 70%;
+                width: 1px;
+            }
+            &:before{
+                content: "";
+                background: #CACACA;
+                position: absolute;
+                top: 6px;
+                right: 0;
+                height: 70%;
+                width: 1px;
+            }
+        }
+        & button{
+            background-color:transparent;
+            padding:0 5px;
+            color:#CACACA; 
+            
+            font-size: 1.5rem;
+            transform: translateY(30px);
+            transition: linear 0.3s;
+        }
+        & button:hover{
+            color:#E59B48;
+            cursor:pointer;
+        }
+    }
+    &:hover {
+        & .image-container{
+            & .first-img{
+                opacity: 1;
+            }
+        }
+        & .button-container button{
+            transform: translateY(0);
+            
+        }
+    }
+}

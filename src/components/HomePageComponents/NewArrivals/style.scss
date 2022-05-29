@@ -1,0 +1,102 @@
+.newArrivals-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+
+    & >h2{
+        font-size: 2rem;
+        margin: 20px 0;
+        font-weight: 500;
+    }
+    & .slide-container{
+        width: clamp(0px,1400px,100%);
+        &:hover .splide__arrows{
+                
+            & .splide__arrow--prev{
+                opacity: 1;
+                transform: translateX(-10px);
+                
+            }
+            & .splide__arrow--next{
+                opacity: 1;
+                transform: translateX(10px);
+                
+            }
+        }
+        & .splide__track{
+            
+            min-height: 480px;
+        }
+        & .slide-detail{
+            position: relative;
+            border: solid 5px #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+            
+            &:hover {
+                border-bottom: 5px solid #FFFFFF;
+                & .effect {
+                    transform: translateY(0);
+                     opacity: 1;
+                 }
+            }
+            & >h3{
+                font-size: 1rem;
+                font-weight: 500;
+                text-overflow: ellipsis; 
+                overflow: hidden; 
+                white-space: nowrap;
+                margin-top:20px;
+                margin-bottom: 10px;
+                max-width: 280px;
+            }
+            & >h4{
+                display: inline-block;
+                color: #E1A512;
+                font-size: 1.1rem;
+                & >h4{
+                    display: inline-block;
+                    color: #C0C0C0;
+                    text-decoration: line-through;
+                    margin-left: 20px;
+                }
+            }
+            & .effect{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                position: absolute;
+                opacity: 0;
+                box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+                bottom: -60px;
+                transform: translateY(-55px);
+                transition: ease-in-out 0.4s;
+                border: 5px solid #F5F5F5;
+                border-top: none;
+                width: 100%;
+                z-index: 1;
+                background-color: white;
+                & >button{
+                    margin-top: 10px;
+                    background-color:black;
+                    color:white;
+                    padding: 5px 20px;
+                    font-weight: 450;
+                    font-size:1rem;
+                    transition-duration: 0.2s;
+                    margin-bottom: 10px;
+                    &:hover{
+                    background-color:#E7B741;
+                    cursor:pointer;
+                }
+                }
+                
+            }
+        }
+    }
+}

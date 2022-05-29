@@ -1,0 +1,57 @@
+.search-brand-container{
+    width: 320px;
+    border: solid 5px #F5F5F5;
+    padding: 15px;
+    margin-top: 20px;
+    & .search-brand-header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #EEEEEE;
+         position: relative;
+        
+        & >h2{
+            font-size: 1.1rem;
+            font-weight: 600;
+            
+            &::before{
+                content: "";
+                background: black;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 120px;
+            }
+        }
+        & >a{
+            background-color: transparent;
+            color: #858585;
+            font-size: 1.2rem;
+            transition: linear .2s;
+            :hover{
+                cursor: pointer;
+                color: #111111;
+            }    
+        }
+    }
+    & .search-brand-content{
+        & .input-wrapper{
+            border: 1px solid #E1E1E1;
+            display: flex;
+            align-items: center;
+            & >span{
+                padding: 10px 10px 8px;
+                color: #52556B;
+            }
+            & >input{
+                &::placeholder{
+                    font-style: italic;
+                    font-size: 0.8rem;
+                    color: #C4D2E3;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.brand-filter-wrapper{
+    width: 320px;
+    border: solid 5px #F5F5F5;
+    padding: 15px;
+    & >h2{
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-bottom:solid 1px #F5F5F5;
+        padding-bottom: 12px;
+        position: relative;
+        margin-bottom: 15px;
+        &::before{
+            content: "";
+            background: black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 120px;
+        }
+    }
+    & .logo-slider-container{
+        margin-top: 0px;
+        max-width: 100%;
+        position: relative;
+
+        & .splide__arrows{
+                
+            & .splide__arrow--prev{
+                opacity: 1;
+                transform: translateX(-0px);
+                position: absolute;
+                top:-55px;
+                left: 245px;
+                transform: scale(0.9);
+            }
+            & .splide__arrow--next{
+                opacity: 1;
+                transform: translateX(0px);
+                position: absolute;
+                top:-55px;
+                right: 13px;
+                transform: scale(0.9);
+            }
+        }
+        & .slide-content{
+            width: 100%;
+            
+            & >a{
+                &:hover >img{
+                    transform: scale(1.1);
+                    cursor: pointer;
+                    filter: blur(0px);
+                }
+                & >img{
+                    width: 100%;
+                    object-fit: cover;
+                    transition: linear 0.3s;
+                    filter: blur(.1px);
+                }
+            }
+        }
+    }
+}

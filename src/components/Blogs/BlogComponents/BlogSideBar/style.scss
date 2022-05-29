@@ -1,0 +1,189 @@
+.blog-sideBar-container{
+    width: 320px;
+    & .sideBar-search{
+        padding:40px 20px 20px 20px;
+        border:solid 5px #F5F5F5;
+        margin-bottom: 40px;
+        & .input-container{
+            display: flex;
+            align-items: center;
+            border: solid 1px #E1E1E1;
+            padding: 4px 10px;
+
+            & >input{
+                flex-grow: 1;
+            }
+            & >button{
+                font-size: 1rem;
+                background-color: transparent;
+                transition-duration: .5s;
+                &:hover{
+                    transform: rotate(360deg);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    & .sideBar-categories{
+        margin-bottom: 40px;
+        border: 5px solid #F5F5F5;
+        padding: 20px;
+        & .sideBar-categories-header{
+            border-bottom: 1px solid #F1F1F1;
+            
+            & >h1{
+                font-size: 1.3rem;
+                font-weight: 500;
+                border-bottom: 3px solid black;
+                padding-bottom: 13px;
+                display: inline-block;
+            }
+        }
+        & >h2{
+            font-size: 1rem;
+            font-weight: 470;
+            margin: 10px 0;
+            &:hover{
+                cursor: pointer;
+                color: #E1A512;
+                & >span{
+                    color: black;
+                    cursor:context-menu;
+                }
+                & >ul{
+                    color: black;
+                    cursor:context-menu;
+                    & >li{
+                        cursor:context-menu;
+                        color: black;
+                    }
+                }
+            }
+            & >span{
+                float: right;
+                font-size: 1.7rem;
+                margin-top: -8px;
+                font-weight: 200;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            & >ul{
+                margin: 20px 0;
+                margin-left: 50px;
+                list-style-type: circle;
+                & >li{
+                    margin:10px 0;
+                    font-size: .9rem;
+                    
+                    &:hover{
+                        cursor: pointer;
+                        color: #E1A512;
+                    }
+                }
+            }
+        }
+    }
+    & .sideBar-recentPosts{
+        margin-bottom: 40px;
+        border: 5px solid #F5F5F5;
+        padding: 20px;
+        
+        & .recentPosts-header{
+            border-bottom: 1px solid #F1F1F1;
+            
+            & >h1{
+                font-size: 1.3rem;
+                font-weight: 500;
+                border-bottom: 3px solid black;
+                padding-bottom: 13px;
+                display: inline-block;
+            }
+        }
+        
+        & .recent-post{
+            margin: 20px 0;
+            border-bottom: solid 1px #E1E1E1;
+            padding-bottom: 20px;
+            &:hover{
+                cursor: pointer;
+            }
+            & .img-container{
+                width: 100%;
+                aspect-ratio: 16/9;
+                & >img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            & >h2{
+                font-size: 1rem;
+                margin: 10px 0 5px;
+                font-weight: 500;
+            }
+            & >h3{
+                font-size: 1rem;
+                font-weight: 400;
+                color: gray;
+            }
+        }
+        & >div:nth-last-child(1){
+            border-bottom: none;
+            padding-bottom: 0px;
+        }
+    }
+    & .sideBar-archive{
+        margin-bottom: 40px;
+        border: 5px solid #F5F5F5;
+        padding: 20px;
+        & .archive-header{
+            border-bottom: 1px solid #F1F1F1;
+            
+            & >h1{
+                font-size: 1.3rem;
+                font-weight: 500;
+                border-bottom: 3px solid black;
+                padding-bottom: 13px;
+                display: inline-block;
+            }
+        }
+        & >h2{
+            font-size: 1rem;
+            font-weight: 470;
+            margin: 10px 0;
+            &:hover{
+                cursor: pointer;
+                color: #E1A512;}
+        }
+    }
+    & .sideBar-tags{
+        border: 5px solid #F5F5F5;
+        padding: 20px;
+        & .tags-header{
+            border-bottom: 1px solid #F1F1F1;
+            
+            & >h1{
+                font-size: 1.3rem;
+                font-weight: 500;
+                border-bottom: 3px solid black;
+                padding-bottom: 13px;
+                display: inline-block;
+            }
+            
+        }
+        & .tags-container{
+            margin-top: 20px;
+            & >span{
+                font-size: .9rem;
+                display: inline-block;
+                margin-right: 20px;
+                margin-left: 10px;
+                &:hover{
+                    color: #E1A512;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
