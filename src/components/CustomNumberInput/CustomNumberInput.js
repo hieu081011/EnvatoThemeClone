@@ -13,8 +13,17 @@ class CustomNumberInput extends React.Component {
     };
 
     onChange = value => {
-        console.log('onChange:', value);
-        this.setState({ value });
+        console.log(Number(value))
+        if (Number(value) < 0) {
+            this.props.setInput(1)
+        }
+        else if (Number(value) > 99) {
+            this.props.setInput(99)
+        }
+        else {
+            this.props.setInput(value);
+        }
+
     };
 
     toggleDisabled = () => {
@@ -39,7 +48,7 @@ class CustomNumberInput extends React.Component {
                     min={0}
                     max={100}
 
-                    value={this.state.value}
+                    value={this.props.input || 1}
                     style={{ width: 80 }}
                     readOnly={this.state.readOnly}
                     onChange={this.onChange}

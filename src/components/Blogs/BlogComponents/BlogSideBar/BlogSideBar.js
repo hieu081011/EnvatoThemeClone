@@ -1,110 +1,84 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.scss'
 import { FaSearch } from 'react-icons/fa'
-import { text } from '@fortawesome/fontawesome-svg-core'
+import { useDispatch, useSelector } from 'react-redux'
+import { getBlogsBySearch } from '../../../../actions/blogs'
+import { useNavigate, useParams, Link, useLocation } from 'react-router-dom'
+
 const BlogSideBar = () => {
-    const [dropDown, setDropDown] = useState([true, true, true, true, true, true])
+    var dropDownNumber = 0;
+    const [dropDown, setDropDown] = useState([, , , , , , true, , , , , , true, true, true, , , true])
+    const [search, setSearch] = useState('')
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const location = useLocation().pathname
+
+    const { id: searchParams } = useParams()
+    const categories = ['Motorcycle', 'Car', 'Food & Drink', 'Drug Pharmacy', 'Kids', 'Beauty Skin', ['Accessories', 'Gift'], 'Handbag', 'Watches', 'Tools', 'Wind', 'Book', ['Home Decor', 'Ceramics', 'Decoration'], ['Technology', 'Laptop & Computer', 'Cell Phone & Accessories', 'Camera, Photo & Video'], ['Beauty', 'Beauty trends'], 'Jewellery', 'Watches', ['Fashion', 'Fashion Trends', 'Baby - Kids', 'Mens fashion', 'Mega fashion'], 'Flowers', 'Garden', 'Sport', 'Furniture']
     let tags = "fashion home streetstyle home ideas decor hand tools home design design food and health bags shoes technology pink men's fashion kids future of food outfit idea vegetable food and the environment valentine's day gift ideas canon camera sports sneakers smart casual mobile luxury fashion"
+    const handleSearch = () => {
+        if (search) {
+
+            navigate(`/blogs/search/${search}`)
+            dispatch(getBlogsBySearch(search))
+
+        }
+    }
+    useEffect(() => {
+        if (location.slice(0, 13) === '/blogs/search') {
+
+            dispatch(getBlogsBySearch(searchParams))
+        }
+
+
+
+    }, [location])
+    const handlePresskey = (e) => {
+        if (e.keyCode === 13) {
+            setSearch(e.target.value)
+            navigate(`/blogs/search/${search}`)
+            dispatch(getBlogsBySearch(search))
+        }
+    }
     return (
         <>
             <div className='blog-sideBar-container'>
                 <div className='sideBar-search'>
                     <div className='input-container'>
-                        <input type='text' placeholder='Search posts here...' />
-                        <button><FaSearch /></button>
+                        <input onKeyDown={handlePresskey} onChange={(e) => (setSearch(e.target.value))} value={search} type='text' placeholder='Search posts here...' />
+                        <button onClick={handleSearch}><FaSearch /></button>
                     </div>
                 </div>
                 <div className='sideBar-categories'>
-                    <div className='sideBar-categories-header'>
+                    <div className='sideBar-categories-header' >
                         <h1>Categories</h1>
                     </div>
+                    {categories.map(
+                        (category, i) => (Array.isArray(category) ?
+                            <>
+                                <h2><Link to={`/blogs/category/${category[0]}`} onClick={() => dispatch(getBlogsBySearch(`${category[0]}`))}>{category[0]}<span>&nbsp;(1)</span></Link>
 
-                    <h2>Motorcycle</h2>
-                    <h2>Car</h2>
-                    <h2>Food & Drink</h2>
-                    <h2>Drug Pharmacy</h2>
-                    <h2>Kids</h2>
-                    <h2>Beauty Skin</h2>
-                    <h2>Accessories
-                        {dropDown[1] ?
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 1) ? (item = !item) : item)))}>+</span></> :
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 1) ? (item = !item) : item)))}>-</span>
-                                <ul>
-                                    <li>Gift</li>
-                                </ul>
-                            </>}
+                                    {dropDown[i] ?
+                                        <>
+                                            <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === i) ? (item = !item) : item)))}>+</span></> :
+                                        <>
+                                            <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === i) ? (item = !item) : item)))}>-</span>
+                                            <ul>
+                                                {category.map((listItem, index) => (index == 0 ? null :
+                                                    <li><Link to={`/blogs/category/${listItem}`} onClick={() => dispatch(getBlogsBySearch(`${listItem}`))}>{listItem}</Link></li>
+                                                ))}
 
-                    </h2>
-                    <h2>Handbag</h2>
-                    <h2>Watches</h2>
-                    <h2>Tools</h2>
-                    <h2>Wind</h2>
-                    <h2>Book</h2>
-                    <h2>Home Decor
-                        {dropDown[2] ?
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 2) ? (item = !item) : item)))}>+</span></> :
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 2) ? (item = !item) : item)))}>-</span>
-                                <ul>
-                                    <li>Ceramics</li>
-                                    <li>Decoration</li>
-                                </ul>
-                            </>}
+                                            </ul>
+                                        </>}
 
+                                </h2>
+                            </>
+                            :
+                            <><h2><Link to={`/blogs/category/${category}`} onClick={() => dispatch(getBlogsBySearch(`${category}`))}>{category}</Link></h2></>
 
-                    </h2>
-                    <h2>Technology
-                        {dropDown[3] ?
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 3) ? (item = !item) : item)))}>+</span></> :
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 3) ? (item = !item) : item)))}>-</span>
-                                <ul>
-                                    <li>Laptop & Computer</li>
-                                    <li>Cell Phones & Accessories</li>
-                                    <li>Camera, Photo & Video</li>
-                                </ul>
-                            </>}
+                        )
+                    )}
 
-
-                    </h2>
-                    <h2>Beauty
-                        {dropDown[0] ?
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 0) ? (item = !item) : item)))}>+</span></> :
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 0) ? (item = !item) : item)))}>-</span>
-                                <ul>
-                                    <li>Beauty trends</li>
-                                </ul>
-                            </>}
-
-                    </h2>
-                    <h2>Jewellery</h2>
-                    <h2>Watches</h2>
-                    <h2>Fashion
-                        {dropDown[4] ?
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 4) ? (item = !item) : item)))}>+</span></> :
-                            <>
-                                <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === 4) ? (item = !item) : item)))}>-</span>
-                                <ul>
-                                    <li>Fashion Trends</li>
-                                    <li>Baby - Kids</li>
-                                    <li>Stylist Fashionista</li>
-                                    <li>Mens fashion</li>
-                                    <li>Mega fashion</li>
-                                </ul>
-                            </>}
-
-                    </h2>
-                    <h2>Flowers</h2>
-                    <h2>Garden</h2>
-                    <h2>Sport</h2>
-                    <h2>Furniture</h2>
 
                 </div>
                 <div className='sideBar-recentPosts'>
@@ -173,7 +147,7 @@ const BlogSideBar = () => {
                         <h1>Tags</h1>
                     </div>
                     <div className='tags-container'>
-                        {tags.split(" ").map((item) => (<span>{item}</span>))}
+                        {tags.split(" ").map((item) => (<span key={Math.floor(Math.random() * 100000)}>{item}</span>))}
                     </div>
                 </div>
             </div>

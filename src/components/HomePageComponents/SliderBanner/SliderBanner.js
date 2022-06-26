@@ -2,7 +2,7 @@ import react, { useState, useEffect } from 'react'
 import './style.scss'
 import { Splide, SplideSlide, SplideTrack, SplideEventHandlers } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/skyblue';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { FaAngleRight } from 'react-icons/fa';
 
 
@@ -24,6 +24,12 @@ const SliderBanner = () => {
             <div className="banner-slider-wrapper">
                 <Splide options={{
                     type: 'loop',
+                    breakpoints: {
+                        800: {
+                            pagination: false,
+
+                        }
+                    }
 
                 }}
                     onDragged={handleEvent}

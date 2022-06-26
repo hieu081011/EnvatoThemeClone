@@ -11,7 +11,7 @@
     }
 
     & .slide-container{
-        width: clamp(0px,1400px,100%);
+        width: clamp(0px,1400px,100% - 2rem);
         & .slide-detail{
             & .img-container{
                 position: relative;
@@ -47,6 +47,10 @@
                 margin-top: 20px;
                 font-size: 1rem;
                 font-weight: 500;
+                overflow: hidden;
+                width: 100%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             & >p{
                 font-size: .9rem;

@@ -1,11 +1,15 @@
 .product-slide-container{
-    width: 664px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    height: fit-content;
     display: flex;
     flex-direction: row-reverse;
+    padding: 20px;
+    border-radius: 4px;
     & .main-slide-container{
         flex-grow: 1;
         margin-left: 10px;
-        position: r;
+        position: relative;
+
         & .splide__arrow{
             background-color: transparent;
             opacity: 0;
@@ -73,6 +77,31 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+        }
+    }
+}
+
+@media all and (max-width:800px) {
+    .product-slide-container{
+        
+        & .thumb-slide-container{
+            display: none;
+        }
+        & .main-slide-container{
+            display: flex;
+            justify-content: center;
+            & .slide-detail{
+                & .magnifier-glass{
+                    display: none;
+                }
+            }
+            & :hover{
+                & .slide-detail{
+                    & >img{
+                        filter: none;
+                    }
+                }
             }
         }
     }

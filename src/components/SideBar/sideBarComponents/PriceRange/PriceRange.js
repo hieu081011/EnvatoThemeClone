@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import './style.scss'
 import { FaAngleDown } from 'react-icons/fa';
 import { Slider } from "@material-ui/core";
-
+import { useNavigate, useLocation } from "react-router-dom";
 
 const minDistance = 10;
 
-const PriceRange = () => {
+const PriceRange = ({ filter, setFilter }) => {
     const [value, setValue] = React.useState([10.00, 30.00]);
     const [rotate, setRotate] = useState(false)
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location)
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -25,20 +28,21 @@ const PriceRange = () => {
                     <div className='slider-display'>
                         <Slider
                             getAriaLabel={() => 'Temperature range'}
-                            value={value}
-                            onChange={handleChange}
+                            value={[Number(filter.price[0]), Number((filter.price[1]))]}
+                            onChange={(e, newValue) => (setFilter({ ...filter, price: (newValue) }))}
                             valueLabelDisplay="on"
-                            min={10.00}
-                            max={30.00}
+                            min={0.00}
+                            max={300.00}
                             step={0.01}
+                            onMouseUp={() => { navigate(`${location.pathname}?p=${filter.price[0]}-${filter.price[1]}`) }}
                         />
                     </div>
                     <div className='price-display'>
-                        <input type='number' onInput={(e) => { setValue([e.target.value, value[1]]) }} value={value[0]}></input>
+                        <input type='number' onInput={(e) => (setFilter({ ...filter, price: [e.target.value, filter.price[1]] }))} value={filter.price[0]}></input>
                         <div>-</div>
-                        <input type='number' onInput={(e) => { setValue([value[0], e.target.value]) }} value={value[1]}></input>
+                        <input type='number' onInput={(e) => (setFilter({ ...filter, price: [filter.price[0], e.target.value] }))} value={filter.price[1]}></input>
                         <h2>$</h2>
-                        <button>GO</button>
+                        <button onClick={() => { navigate(`${location.pathname}?p=${filter.price[0]}-${filter.price[1]}`) }}>GO</button>
                     </div>
                 </div>
             </div>

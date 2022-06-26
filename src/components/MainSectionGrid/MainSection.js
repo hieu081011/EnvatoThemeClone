@@ -1,66 +1,20 @@
-import React from 'react'
+import React, { Fragment, useState } from 'react'
 import './style.scss'
-import CustomImage from '../CustomImage/CustomImage'
-import CustomNumberInput from '../CustomNumberInput/CustomNumberInput'
+
+import { useSelector } from 'react-redux'
+import Product from './Product/Product'
 const MainSectionGrid = () => {
+    const { products } = useSelector(state => state.productState)
     return (
         <>
             <div className='main-section-grid-container'>
-                <div className='product'>
-                    <div class='effect'>
-                        <CustomNumberInput />
-                        <button >Add to Cart</button>
-                    </div>
-                    <CustomImage />
-                    <div className='product-content'>
-                        <a>product-name</a>
-                        <h2>$123</h2>
-                    </div>
-                </div>
-                <div className='product'>
-                    <div class='effect'>
-                        <CustomNumberInput />
-                        <button >Add to Cart</button>
-                    </div>
-                    <CustomImage />
-                    <div className='product-content'>
-                        <a>product-name</a>
-                        <h2>$123</h2>
-                    </div>
-                </div>
-                <div className='product'>
-                    <div class='effect'>
-                        <CustomNumberInput />
-                        <button >Add to Cart</button>
-                    </div>
-                    <CustomImage />
-                    <div className='product-content'>
-                        <a>product-name</a>
-                        <h2>$123</h2>
-                    </div>
-                </div>
-                <div className='product'>
-                    <div class='effect'>
-                        <CustomNumberInput />
-                        <button >Add to Cart</button>
-                    </div>
-                    <CustomImage />
-                    <div className='product-content'>
-                        <a>product-name</a>
-                        <h2>$123</h2>
-                    </div>
-                </div>
-                <div className='product'>
-                    <div class='effect'>
-                        <CustomNumberInput />
-                        <button >Add to Cart</button>
-                    </div>
-                    <CustomImage />
-                    <div className='product-content'>
-                        <a>product-name</a>
-                        <h2>$123</h2>
-                    </div>
-                </div>
+                {
+                    products && products.map((product) => (
+                        <Product product={product} key={product._id} />
+                    ))
+                }
+
+
             </div>
         </>
     )

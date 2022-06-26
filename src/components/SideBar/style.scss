@@ -1,8 +1,9 @@
 .sidebar-container{
-    width: 320px;
+    
     border:solid 5px #F5F5F5;
     padding: 15px;
     font-family: Helvetica, sans-serif;
+    height: fit-content;
     & >h2{
         font-size: 1.3rem;
         font-weight: 500;
@@ -26,5 +27,10 @@
         border-bottom:solid 1px #F5F5F5;
         padding-bottom: 12px;
         margin-bottom: 15px;
+    }
+}
+@media all and (max-width:800px) {
+    .sideBar{
+        display: none;
     }
 }

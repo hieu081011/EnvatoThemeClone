@@ -161,3 +161,107 @@
         }
     }
 }
+@media all and (max-width:800px) {
+
+    .footer-wraper{
+        margin-bottom: 45px;
+        & .footer-1{
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+           
+            & .footer-1_1{
+          
+                & >span{
+                    display: none;             
+                }
+                & >div{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            & .footer-1_2{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+        & .footer-2{
+            flex-direction: column;
+            & >div{
+                & >span{
+                    margin-right: 10px;
+                    font-size: 1.2rem;
+                }
+                & >h3{
+                    font-size: .9rem;
+                }
+            }
+        }
+        & .footer-3{
+            padding-top: 10px;
+            margin: 5px 0 10px;
+            flex-direction: column;
+            border-top: solid 2px #eeeeee;
+            & >div{
+                max-width: none;
+                
+                margin-right: 0px;
+                & >h2{
+                    white-space: nowrap;
+                    font-size: .9rem;
+                    display: flex;
+                    align-items: center;
+                    padding: 5px 0px 5px 2rem;
+                    width: 90%;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    &::before{
+                        transition-duration: .2s;
+                        content: '\276F';
+                        margin-right: 10px;
+                        font-size: .9rem;
+                        font-weight: 400;
+                    }
+                }
+                & >ul,>h3{
+                    transition: .2s linear!important;
+                    margin-left: 2rem;
+                    
+                    padding: 0;
+                    max-height: 0px;
+                    overflow: hidden;
+                    min-height: 0px;
+                    
+                }
+                & .active{
+                    
+                    max-height:100vh;
+                    
+                }
+                & .activeh2{
+                    &::before{
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+        & .footer-4{
+            flex-direction: column;
+            align-items: center;
+            & .footer-4_1{
+                padding: 0;
+                
+                & >button{
+                    background-color: transparent;
+                }
+                
+            }
+            & .footer-4_3{
+                margin: 5px 0;
+                padding: 0;
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 .priceRange-container{
+    width: 100%;
     & .header{
         display: flex;
         justify-content: space-between;
@@ -21,10 +22,13 @@
         }
     }
     & .input-wrapper{
+        
+        margin-bottom: 40px;
         & .price-display{
             display: flex;
             flex-direction: row;
             align-items: center;
+            
             & >input{
                 &::-webkit-inner-spin-button{
                     -webkit-appearance: none;
@@ -37,7 +41,7 @@
             & >h2{
                 font-size: 1.2rem;
                 font-weight: 400;
-                margin-right: 90px;
+                flex-grow: 1;
             }
             & >div{
                 margin-right: 20px;

@@ -1,0 +1,23 @@
+.product-detail-page-container{
+    margin-top: 150px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .top-section{
+        display: grid;
+        grid-template-columns: 6fr 7fr;
+        width: clamp(0px, 1360px ,100%);
+        gap:50px;
+        margin-bottom: 40px;
+    }
+}
+@media all and (max-width:800px) {
+    .product-detail-page-container{
+        padding: 0 1rem;
+        & .top-section{
+            grid-template-columns: 1fr;
+        }
+    }
+}

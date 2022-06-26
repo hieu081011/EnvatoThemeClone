@@ -1,11 +1,16 @@
+
 .blog-detail-container{
-    width: 1000px;
+    height: fit-content;
     padding: 20px;
     border: solid 2px#EEEEEE;
     margin-left:0px;
     & .blog-detail-img-container{
+        
         border-bottom: 1px dashed #EEEEEE;
         padding-bottom: 20px;
+        & >img{
+            max-width: 100%;
+        }
         & .buttons-container{
             display: flex;
             justify-content: space-between;

@@ -8,7 +8,7 @@ const ProductDetail = () => {
     return (
         <>
             <div className="product-detail-container">
-                <ProductDetailTabs></ProductDetailTabs>
+                <ProductDetailContent></ProductDetailContent>
             </div>
         </>
     )

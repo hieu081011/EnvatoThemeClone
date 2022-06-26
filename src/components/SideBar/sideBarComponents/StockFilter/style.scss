@@ -1,13 +1,13 @@
 
 .stock-filter-wrapper{
-    margin-top: 40px;
+    margin-top: 20px;
     
-    
+    width: 100%;
     & .stock-filter-header{
         display: flex;
         justify-content: space-between;
         margin-bottom: 15px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         border-bottom: 1px solid #EEEEEE;
         & >h2{
             font-size: 1.1rem;

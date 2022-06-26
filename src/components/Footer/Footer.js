@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { FaFacebook, FaTwitter, FaPinterest, FaLinkedin, FaYoutube, FaTruck, FaLock, FaMoneyBill, FaEnvelopeOpen, FaEnvelope } from 'react-icons/fa';
 const Footer = () => {
+    const [dropDown, setDropDown] = useState([false, false, false])
     return (
         <>
             <div className='footer-wraper'>
@@ -38,15 +39,15 @@ const Footer = () => {
                 </div>
                 <div className='footer-3'>
                     <div>
-                        <h2>About shop</h2>
+                        <h2 >About shop</h2>
                         <h3>Although, thoday we're even more excited to release our Wireframe Kit.</h3>
                         <h3>Address: Cosmetics Store, United States</h3>
                         <h3>Call us: 1234567890</h3>
                         <h3>Email us: support@company.com</h3>
                     </div>
                     <div>
-                        <h2>Codazon.com</h2>
-                        <ul>
+                        <h2 className={dropDown[0] ? 'activeh2' : undefined} onClick={() => { setDropDown([!dropDown[0], dropDown[1], dropDown[2]]) }}>Codazon.com</h2>
+                        <ul className={dropDown[0] ? 'active' : undefined}>
                             <li>Privacy and Cookie Policy</li>
                             <li>About Us</li>
                             <li>Search Terms</li>
@@ -55,8 +56,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2>Custom Service</h2>
-                        <ul>
+                        <h2 className={dropDown[1] ? 'activeh2' : undefined} onClick={() => { setDropDown([dropDown[0], !dropDown[1], dropDown[2]]) }}>Custom Service</h2>
+                        <ul className={dropDown[1] ? 'active' : undefined}>
                             <li>Return Policy</li>
                             <li>Product Recalls</li>
                             <li>Int'I Customers</li>
@@ -65,8 +66,8 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div>
-                        <h2>Get to know us</h2>
-                        <ul>
+                        <h2 className={dropDown[2] ? 'activeh2' : undefined} onClick={() => { setDropDown([dropDown[0], dropDown[1], !dropDown[2]]) }}>Get to know us</h2>
+                        <ul className={dropDown[2] ? 'active' : undefined}>
                             <li>About Us</li>
                             <li>Corporate</li>
                             <li>Suppliers</li>

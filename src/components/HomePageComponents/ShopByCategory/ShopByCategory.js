@@ -12,7 +12,14 @@ const ShopByCategory = () => {
                     <Splide options={{
                         type: 'loop',
                         perPage: 6,
-
+                        breakpoints: {
+                            1000: {
+                                perPage: 5,
+                            },
+                            600: {
+                                perPage: 4,
+                            }
+                        }
 
                     }}
                         hasTrack={false}

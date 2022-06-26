@@ -92,7 +92,7 @@ const BrandFilter = () => {
                         }}
                     >
                         {logoList.map((item) => (
-                            <SplideSlide>
+                            <SplideSlide key={item.logo1}>
                                 <div className='slide-content'>
                                     <a>
                                         <img src={item.logo1src} />

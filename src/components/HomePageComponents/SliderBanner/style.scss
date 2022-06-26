@@ -1,10 +1,5 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    outline: none;
-    border: none;
-    & .banner-slider-wrapper{
+
+.banner-slider-wrapper{
         & .splide__pagination{
             transform:translateY(0px);
             & .is-active{
@@ -43,19 +38,19 @@
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
-                & h4{
+                & >h4{
                     color: white;
                     font-weight: 400;
                     font-size: 1.2rem;
                 }
-                & h1{
+                & >h1{
                     color: white;  
                     font-size: 3.5rem;
                     padding:5px 0;
                     transform: translateY(-100vh);
                     
                 }
-                & p{
+                & >p{
                     color: white;
                     text-align: center;
                     padding-bottom: 40px;
@@ -63,7 +58,7 @@
                     
                     animation-delay: 0.4s;
                 }
-                & button{
+                & >button{
                     background-color:black;
                     color: white;
                     padding:10px 50px;
@@ -85,19 +80,19 @@
                 align-items: center;
                 top:169px;
                 right:269px;
-                & h4{
+                & >h4{
                     color:white;
                     font-weight: 500;
                     
                 }
-                & h1{
+                & >h1{
                     color:white;
                     padding-top:15px;
                     padding-bottom: 30px;
                     font-size: 3rem;
                     transform: translateY(-100vh);
                 }
-                & button{
+                & >button{
                     background-color:black;
                     color: white;
                     padding:10px 40px;
@@ -119,9 +114,7 @@
             animation:fall 1.2s forwards;
                
         }
-    }
 }
-
 
 @keyframes fall{
     50%{
@@ -132,6 +125,48 @@
     };
     100%{
         transform: translateY(0);
+    }
+}
+@media all and (max-width:900px) {
+    .banner-slider-wrapper{
+        margin-top: 55px;
+        & .banner-slider-container{
+            & .banner-detail-1{
+                top:30%;
+                & >h4{
+                    font-size: 1rem;
+                }
+                & >h1{
+                    padding-top: .3rem;
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    
+                }
+                & >p{
+                    display: none;
+                }
+                & >button{
+                    display: none;
+                }
+            }
+            & .banner-detail-2{
+                top:35%;
+                right: 0;
+                left: 0;
+                
+                & >h1{
+                    padding-top: .3rem;
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                }
+                & >p{
+                    display: none;
+                }
+                & >button{
+                    display: none;
+                }
+            }
+        }
     }
 }
 

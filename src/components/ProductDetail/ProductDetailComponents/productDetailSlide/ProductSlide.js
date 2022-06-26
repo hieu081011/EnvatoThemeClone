@@ -1,35 +1,58 @@
 import React, { useRef, useEffect, useState } from "react";
 import './style.scss'
 import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import { useSelector } from "react-redux";
 
 const ProductSlide = () => {
+    const { product } = useSelector((state) => state.productState)
     const mainRef = useRef();
     const thumbRef = useRef();
+
     const [[x, y], setXY] = useState([0, 0]);
-    const [[imgWidth, imgHeight], setSize] = useState([540, 700]);
+    const [[imgWidth, imgHeight], setSize] = useState([460, 570]);
+
     const [showMagnifier, setShowMagnifier] = useState(false);
     const magnifierHeight = 320
     const magnifieWidth = 320
     const zoomLevel = 2.0
-    const imgsSrc = [
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/81a20292028a6194b181f5059f034dda/m/e/megafashion_7_1.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/81a20292028a6194b181f5059f034dda/m/e/megafashion_7_2.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/81a20292028a6194b181f5059f034dda/m/e/megafashion_7_3.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/81a20292028a6194b181f5059f034dda/m/e/megafashion_7_4.jpg',
-    ]
-    const thumbImgsSrc = [
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/99619213a5badbb286918fa2fa7d4acf/m/e/megafashion_7_1.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/99619213a5badbb286918fa2fa7d4acf/m/e/megafashion_7_2.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/99619213a5badbb286918fa2fa7d4acf/m/e/megafashion_7_3.jpg',
-        'http://unlimited-12ca8.kxcdn.com/media/catalog/product/cache/99619213a5badbb286918fa2fa7d4acf/m/e/megafashion_7_4.jpg',
-    ]
-
-
+    let location;
+    if (product.type == "Home Garden") location = 'homegarden'
+    if (product.type == 'Mega Fashion') location = 'megafashion'
+    console.log(location)
     useEffect(() => {
         if (mainRef.current && thumbRef.current && thumbRef.current.splide) {
             mainRef.current.sync(thumbRef.current.splide)
         }
-    }, []);
+    }, [product]);
+    console.log(product)
+    if (product && product.length == 0) return (null)
+    if (product.image.length == 4) {
+        var imgsSrc = [
+            `http://localhost:5000/image/product/${location}/${product.image[0]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[1]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[2]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[3]}.jpg`,
+
+        ]
+
+
+    }
+    else {
+        var imgsSrc = [
+            `http://localhost:5000/image/product/${location}/${product.image[0]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[1]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[2]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[3]}.jpg`,
+            `http://localhost:5000/image/product/${location}/${product.image[4]}.jpg`,
+
+
+        ]
+    }
+    const thumbImgsSrc = imgsSrc
+
+
+
+
     return (
         <>
             <div className="product-slide-container">
@@ -40,12 +63,8 @@ const ProductSlide = () => {
                         hasTrack={false}
 
                         options={{
-                            type: 'loop',
-                            perPage: 1,
-                            rewind: true,
-                            width: '550px',
-                            height: '700px',
-                            pagination: false,
+                            type: 'loop', perPage: 1, rewind: true, width: '540px', pagination: false,
+
                         }}>
                         <SplideTrack>
                             {
@@ -116,15 +135,7 @@ const ProductSlide = () => {
                 <div className="thumb-slide-container">
                     <Splide ref={thumbRef}
                         options={{
-                            type: 'slide',
-                            direction: 'ttb',
-                            perPage: 4,
-                            pagination: false,
-                            width: '100%',
-                            drag: false,
-                            height: '100%',
-                            isNavigation: true,
-                            gap: '1rem',
+                            type: 'slide', direction: 'ttb', perPage: 4, pagination: false, width: '100%', drag: false, height: '100%', isNavigation: true, gap: '1rem',
                         }}>
                         {
                             thumbImgsSrc.map((imgsrc) => (

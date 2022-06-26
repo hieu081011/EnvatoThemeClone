@@ -1,0 +1,43 @@
+.mobile-header-container{
+    
+    display: none;
+    align-items: center;
+    height: 25px;
+    padding: 1rem;
+    position: fixed;
+    top:0;
+    width: calc(100vw - 2rem);
+    z-index: 5;
+    background-color: white;
+    border-bottom: 1px solid gainsboro;
+    
+    & >button:nth-child(1){
+        font-size: 1.5rem;
+        background-color: transparent;
+    }
+    & .img-container{
+        flex-grow:  1;
+       display: flex;
+       justify-content: center;
+       height: 100%;
+        & >a >img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    & >button:nth-child(3){
+        font-size: 1.2rem;
+        background-color: transparent;
+    }
+    & .cart-button{
+        margin-left: 1rem;
+        & >span{
+            font-size: 1.3rem;
+        }
+    }
+}
+@media all and (max-width:800px) {
+    .mobile-header-container{
+        display: flex;
+    }
+}

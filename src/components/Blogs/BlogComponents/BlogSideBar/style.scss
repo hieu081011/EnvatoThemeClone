@@ -1,5 +1,5 @@
 .blog-sideBar-container{
-    width: 320px;
+    width: 100%;
     & .sideBar-search{
         padding:40px 20px 20px 20px;
         border:solid 5px #F5F5F5;
@@ -39,26 +39,33 @@
                 display: inline-block;
             }
         }
-        & >h2{
+        
+        & > h2{
             font-size: 1rem;
             font-weight: 470;
             margin: 10px 0;
-            &:hover{
-                cursor: pointer;
-                color: #E1A512;
-                & >span{
-                    color: black;
-                    cursor:context-menu;
-                }
-                & >ul{
-                    color: black;
-                    cursor:context-menu;
-                    & >li{
-                        cursor:context-menu;
+            color: black;
+            & > a{
+                color: black;
+                text-decoration: none;
+                &:hover{
+                    cursor: pointer;
+                    color: #E1A512;
+                    & >span{
                         color: black;
+                        cursor:context-menu;
+                    }
+                    & >ul{
+                        color: black;
+                        cursor:context-menu;
+                        & >li{
+                            cursor:context-menu;
+                            color: black;
+                        }
                     }
                 }
             }
+            
             & >span{
                 float: right;
                 font-size: 1.7rem;
@@ -75,7 +82,16 @@
                 & >li{
                     margin:10px 0;
                     font-size: .9rem;
-                    
+                    & >a{
+                        color: black;
+                        text-decoration: none;
+                        &:hover{
+                            cursor: pointer;
+                            color: #E1A512;
+                            
+                            
+                        }
+                    }
                     &:hover{
                         cursor: pointer;
                         color: #E1A512;

@@ -20,9 +20,9 @@ const TopDeals = () => {
                                     <CustomImage></CustomImage>
                                 </div>
                                 <div className='content-detail'>
-                                    <h2> ColourMatch 40 Piece Procelain<br></br>Dinner Starter Set - Striped</h2>
+                                    <h2> ColourMatch 40 Piece Procelain Dinner Starter Set - Striped</h2>
                                     <h5>SKU:  kitchen_010</h5>
-                                    <h3>$56.26<h3>$122.00</h3></h3>
+                                    <div>$56.26<h4>$122.00</h4></div>
                                     <p>A decompression valve allows you to get every bit of air out to keep your gear snug. Vertical and horizontal compression straps help you further...</p>
                                     <CustomNumberInput />
                                     <button>Add to Cart</button>
@@ -37,7 +37,7 @@ const TopDeals = () => {
                                 <div className='content-detail'>
                                     <h2> Garden Gazebo</h2>
                                     <h5>SKU:  garden_002</h5>
-                                    <h3>$55.00<h3>$132.00</h3></h3>
+                                    <div>$55.00<h4>$132.00</h4></div>
                                     <p>This backpack features a dual compartment design and includes two side mesh pockets to hold water bottles as well as a front organizer compartment</p>
                                     <CustomNumberInput />
                                     <button>Add to Cart</button>
@@ -52,7 +52,7 @@ const TopDeals = () => {
                                 <div className='content-detail'>
                                     <h2> Clark 4 Piece Acessory Set - White</h2>
                                     <h5>SKU:  bathroom_002</h5>
-                                    <h3>$99.00<h3>$122.00</h3></h3>
+                                    <div>$99.00<h4>$122.00</h4></div>
                                     <p>Toss your beach gear, campus books and electronics into the Vortex Day Pack on your next outing. With two main compartments, you'll be organized for...</p>
                                     <CustomNumberInput />
                                     <button>Add to Cart</button>
@@ -67,6 +67,11 @@ const TopDeals = () => {
                             perPage: 2,
                             pagination: false,
                             gap: '2rem',
+                            breakpoints: {
+                                800: {
+                                    gap: '15px'
+                                }
+                            }
                         }}>
                         <SplideSlide>
                             <div className='slide-detail'>
@@ -75,7 +80,7 @@ const TopDeals = () => {
                                 </div>
                                 <div className='detail'>
                                     <h3>Clark 4 Piece Acessory Set - White</h3>
-                                    <h4>$99.00<h4>$122.00</h4></h4>
+                                    <div>$99.00<h3>$122.00</h3></div>
                                     <div>
                                         <CustomNumberInput />
                                         <button >Add to Cart</button>
@@ -91,7 +96,7 @@ const TopDeals = () => {
                                 </div>
                                 <div className='detail'>
                                     <h3>Garden Gazebo</h3>
-                                    <h4>$55.00<h4>$132.00</h4></h4>
+                                    <div>$55.00<h3>$132.00</h3></div>
                                     <div>
                                         <CustomNumberInput />
                                         <button >Add to Cart</button>
@@ -106,7 +111,7 @@ const TopDeals = () => {
                                 </div>
                                 <div className='detail'>
                                     <h3>Colour Match 40 Piece Porcelain Dinne...</h3>
-                                    <h4>$56.00<h4>$122.00</h4></h4>
+                                    <div>$56.00<h3>$122.00</h3></div>
                                     <div>
                                         <CustomNumberInput />
                                         <button >Add to Cart</button>

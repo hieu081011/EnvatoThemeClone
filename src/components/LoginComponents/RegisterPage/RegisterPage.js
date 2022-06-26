@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { FaQuestionCircle } from 'react-icons/fa'
+import { signup } from '../../../actions/auth'
+import { useDispatch } from 'react-redux'
 const RegisterPage = () => {
+    const [signUpForm, setSignUpForm] = useState({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+    const dispatch = useDispatch()
+    const handleSubmit = () => {
+        dispatch(signup(signUpForm))
+        // setSignUpForm({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+    }
     return (
         <>
             <div className='register-page-container'>
@@ -17,11 +25,11 @@ const RegisterPage = () => {
                     <h4>Name Prefix<span>*</span></h4>
                     <input type='text' />
                     <h4>First Name<span>*</span></h4>
-                    <input type='text' />
+                    <input value={signUpForm.firstName} type='text' onChange={(e) => setSignUpForm({ ...signUpForm, firstName: e.target.value })} />
                     <h4>Middle Name/Intial</h4>
                     <input type='text' />
                     <h4>Last Name<span>*</span></h4>
-                    <input type='text' />
+                    <input value={signUpForm.lastName} type='text' onChange={(e) => setSignUpForm({ ...signUpForm, lastName: e.target.value })} />
                     <h4>Suffix</h4>
                     <input type='text' />
                     <label ><input type='checkbox' /> Sign Up for Newsletter</label><br></br>
@@ -43,13 +51,13 @@ const RegisterPage = () => {
                         SIGN-IN INFORMATION
                     </div>
                     <h4>Email<span>*</span></h4>
-                    <input type='text' />
-                    <h4>Tax/VAT Number<span>*</span></h4>
-                    <input type='text' />
-                    <h4>Tax/VAT Number<span>*</span></h4>
-                    <input type='text' />
+                    <input type='text' value={signUpForm.email} onChange={(e) => setSignUpForm({ ...signUpForm, email: e.target.value })} />
+                    <h4>Password<span>*</span></h4>
+                    <input type='text' value={signUpForm.password} onChange={(e) => setSignUpForm({ ...signUpForm, password: e.target.value })} />
+                    <h4>Confirm Password<span>*</span></h4>
+                    <input type='text' value={signUpForm.confirmPassword} onChange={(e) => setSignUpForm({ ...signUpForm, confirmPassword: e.target.value })} />
                     <label ><input type='checkbox' /> Show Password</label><br></br>
-                    <button>CREATE AN ACCOUNT</button>
+                    <button onClick={handleSubmit}>CREATE AN ACCOUNT</button>
 
 
                 </div>

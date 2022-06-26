@@ -18,7 +18,7 @@
     
     & .slide-container{
         margin-top: 20px;
-       width: 80%;
+       width: clamp(0px,1380px,100% - 5rem);
        border: 4px solid #F5F5F5;
        padding:  30px 20px;
        & .splide__pagination{

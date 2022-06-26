@@ -16,71 +16,79 @@ const NewArrivals = () => {
 
                         gap: '1rem',
                         pagination: false,
+                        breakpoints: {
+                            1200: {
+                                perPage: 3,
+                            },
+                            700: {
+                                perPage: 2,
+                            }
+                        }
                     }}>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                         <SplideSlide>
                             <div className='slide-detail'>
-                                <div class='effect'>
+                                <div className='effect'>
                                     <CustomNumberInput />
                                     <button >Add to Cart</button>
                                 </div>
                                 <CustomImage></CustomImage>
                                 <h3>DOUBLE DOOR MIRRORED BATHROOM CABINET - STAINLESS STEEL</h3>
-                                <h4>$23.00<h4>$170.00</h4></h4>
+                                <div>$23.00<h4>$170.00</h4></div>
                             </div>
                         </SplideSlide>
                     </Splide>

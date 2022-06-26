@@ -1,0 +1,26 @@
+.fomrs-container{
+    width: 100%;
+    & .form-navbar{
+        display: flex;
+        height:70px;
+        width: 100%;
+        background-color: #F3F3F3;
+        & >div{
+            font-size: 1.5rem;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            &:hover{
+                background-color: #555555;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        & .active{
+            background-color: #04AA6D;
+            color:white
+        }
+    }
+}

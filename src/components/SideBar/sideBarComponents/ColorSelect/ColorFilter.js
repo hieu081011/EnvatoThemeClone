@@ -38,7 +38,7 @@ const ColorFilter = () => {
                 <div className='colorFilter-content'>
 
                     {colorList.map((item) => (
-                        <label className='input-container'>
+                        <label key={item.label} className='input-container'>
                             <div style={{ backgroundColor: item.hex, }} className='indicator'>1</div>
                             {item.label}
                             <input type='checkbox'></input>

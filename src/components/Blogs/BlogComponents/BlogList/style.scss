@@ -1,5 +1,5 @@
 .blogList-container{
-    width: clamp(0px,1040px,100%);
+    width: 100%;
 
     & .blog-container{
         display: grid;
@@ -7,9 +7,10 @@
         gap:20px;
         border: 1px solid #EEEEEE;
         padding: 20px;
+        margin-bottom: 20px;
         &:hover{
             & .blog-img-container{
-                & >img{
+                & >a >img{
                     transform: scale(1.1);
                     
                 }
@@ -23,7 +24,8 @@
             &:hover{
                 cursor: pointer;
             }
-            & >img{
+
+            & >a >img{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -33,6 +35,10 @@
         }
         & .blog-content-container{
             position: relative;
+            & >a{
+                color: black;
+                text-decoration: none;
+            }
             & .blog-date{
                 position: absolute;
                 padding: 5px 10px;
@@ -79,7 +85,9 @@
                 padding-top: 10px;
                 align-items: center;
                 margin-top: 100px;
-                & >button{
+                & >a{
+                    text-decoration: none;
+                    & >button{
                     
                     display: flex;
                     align-items: center;
@@ -95,6 +103,7 @@
                         padding-top: 4px;
                         margin-left: 7px;
                     }
+                }
                 }
                 & .shareButtons{
                     

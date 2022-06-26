@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { FaGoogle } from 'react-icons/fa'
-
+import { signin } from '../../../actions/auth'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 const LoginPage = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const [signIn, setSignIn] = useState({ email: '', password: '' })
+
     return (
         <>
             <div className='login-page-container'>
@@ -16,12 +22,12 @@ const LoginPage = () => {
                         <h2>REGISTERED CUSTOMERS</h2>
                         <h3>If you have an account, sign in with your email address.</h3>
                         <h4>Email<span>*</span></h4>
-                        <input type='text'></input>
+                        <input type='text' value={signIn.email} onChange={(e) => { setSignIn({ ...signIn, email: e.target.value }) }}></input>
                         <h4>Password<span>*</span></h4>
-                        <input type='text'></input>
+                        <input type='text' value={signIn.password} onChange={(e) => { setSignIn({ ...signIn, password: e.target.value }) }}></input>
 
                         <label ><input type='checkbox' /> Show Password</label><br></br>
-                        <button>SIGN IN</button>
+                        <button onClick={() => { dispatch(signin(signIn)); navigate('/') }}>SIGN IN</button>
                         <a>FORGOT YOUR PASSWORDS?</a>
 
 
