@@ -4,17 +4,15 @@ import { FaAngleDown } from 'react-icons/fa';
 import { Slider } from "@material-ui/core";
 import { useNavigate, useLocation } from "react-router-dom";
 
-const minDistance = 10;
+
 
 const PriceRange = ({ filter, setFilter }) => {
     const [value, setValue] = React.useState([10.00, 30.00]);
     const [rotate, setRotate] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location)
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
+
+
 
     return (
         <>

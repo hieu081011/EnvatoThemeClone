@@ -2,13 +2,43 @@ import React, { useState } from 'react'
 import './style.scss'
 import { FaQuestionCircle } from 'react-icons/fa'
 import { signup } from '../../../actions/auth'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 const RegisterPage = () => {
     const [signUpForm, setSignUpForm] = useState({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
     const dispatch = useDispatch()
+    const { errors } = useSelector(state => state.auth)
+    const handleKeyPress = (e) => {
+
+        if (e.code === 'Enter')
+            handleSubmit()
+    }
     const handleSubmit = () => {
+
+        if (signUpForm.firstName.trim() === '') {
+            return dispatch({ type: 'SET ERROR', data: 'First name cant be empty !' })
+        }
+        if (signUpForm.lastName.trim() === '') {
+            return dispatch({ type: 'SET ERROR', data: 'Last name cant be empty!' })
+        }
+        if (signUpForm.email.trim() === '') {
+            return dispatch({ type: 'SET ERROR', data: 'Email cant be empty !' })
+        }
+        if (signUpForm.password.trim() === '') {
+            return dispatch({ type: 'SET ERROR', data: 'Password cant be empty !' })
+        }
+        if (signUpForm.confirmPassword.trim() === '') {
+            return dispatch({ type: 'SET ERROR', data: 'Confirm Password cant be empty !' })
+        }
+        if (signUpForm.password !== signUpForm.confirmPassword) {
+            return dispatch({ type: 'SET ERROR', data: 'Password and confirm password must be same !' })
+        }
+        if (!signUpForm.email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)) {
+            return dispatch({ type: 'SET ERROR', data: "Email must follow this format: abc@xyz.abc" })
+        }
+
+
         dispatch(signup(signUpForm))
-        // setSignUpForm({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
+        setSignUpForm({ firstName: '', lastName: '', email: '', password: '', confirmPassword: '' })
     }
     return (
         <>
@@ -18,7 +48,7 @@ const RegisterPage = () => {
                     <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' /></span>
                     <h2>Sign in with Google</h2>
                 </div>
-                <div className='register-form'>
+                <div className='register-form' onKeyDown={(e) => handleKeyPress(e)} tabIndex='0'>
                     <div className='form-header'>
                         PERSONAL INFORMATION
                     </div>
@@ -57,6 +87,9 @@ const RegisterPage = () => {
                     <h4>Confirm Password<span>*</span></h4>
                     <input type='text' value={signUpForm.confirmPassword} onChange={(e) => setSignUpForm({ ...signUpForm, confirmPassword: e.target.value })} />
                     <label ><input type='checkbox' /> Show Password</label><br></br>
+                    {errors &&
+                        <div className='error-message'>{errors}</div>
+                    }
                     <button onClick={handleSubmit}>CREATE AN ACCOUNT</button>
 
 

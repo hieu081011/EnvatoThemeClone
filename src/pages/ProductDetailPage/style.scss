@@ -8,7 +8,7 @@
     & .top-section{
         display: grid;
         grid-template-columns: 6fr 7fr;
-        width: clamp(0px, 1360px ,100%);
+        width: clamp(0px, 1360px ,100% - 1rem);
         gap:50px;
         margin-bottom: 40px;
     }

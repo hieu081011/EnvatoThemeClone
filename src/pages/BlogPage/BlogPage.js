@@ -5,7 +5,7 @@ import BlogList from '../../components/Blogs/BlogComponents/BlogList/BlogList'
 import BlogSideBar from '../../components/Blogs/BlogComponents/BlogSideBar/BlogSideBar'
 import { useLocation, useParams } from 'react-router-dom'
 
-import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
+
 const BlogPage = () => {
 
     const location = useLocation().pathname
@@ -35,7 +35,7 @@ const BlogPage = () => {
                     <BlogList ></BlogList>
                     <BlogSideBar></BlogSideBar>
                 </div>
-                <LoadingSpinner></LoadingSpinner>
+
             </div>
         </>
     )

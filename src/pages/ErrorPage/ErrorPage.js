@@ -7,7 +7,7 @@ const ErrorPage = () => {
                 <div className='page-content'>
 
                     <div>PAGE NOT AVAILABLE</div>
-                    <img src='http://localhost:5000/image/error/404.jpg' />
+                    <img src='/images/404.jpg' />
                 </div>
             </div>
         </>

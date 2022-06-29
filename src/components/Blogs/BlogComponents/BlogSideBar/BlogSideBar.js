@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import './style.scss'
 import { FaSearch } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
@@ -55,8 +55,8 @@ const BlogSideBar = () => {
                     </div>
                     {categories.map(
                         (category, i) => (Array.isArray(category) ?
-                            <>
-                                <h2><Link to={`/blogs/category/${category[0]}`} onClick={() => dispatch(getBlogsBySearch(`${category[0]}`))}>{category[0]}<span>&nbsp;(1)</span></Link>
+                            <Fragment key={i}>
+                                <h2 ><Link to={`/blogs/category/${category[0]}`} onClick={() => dispatch(getBlogsBySearch(`${category[0]}`))}>{category[0]}<span>&nbsp;(1)</span></Link>
 
                                     {dropDown[i] ?
                                         <>
@@ -72,9 +72,9 @@ const BlogSideBar = () => {
                                         </>}
 
                                 </h2>
-                            </>
+                            </Fragment>
                             :
-                            <><h2><Link to={`/blogs/category/${category}`} onClick={() => dispatch(getBlogsBySearch(`${category}`))}>{category}</Link></h2></>
+                            <Fragment key={i}><h2 ><Link to={`/blogs/category/${category}`} onClick={() => dispatch(getBlogsBySearch(`${category}`))}>{category}</Link></h2></Fragment>
 
                         )
                     )}

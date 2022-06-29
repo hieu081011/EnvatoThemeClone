@@ -10,11 +10,11 @@ const CheckOut = () => {
     const { cart } = useSelector((state) => state.auth)
     const [shippingFee, setShippingFee] = useState(15)
 
-    console.log(shippingFee)
+
     const [dropDown, setDropDown] = useState([false, false])
     const handleDelete = (userId, productId) => {
 
-        console.log(productId)
+
         dispatch(deleteInCart(userId, productId))
     }
     const handleUpdate = (userId, cart) => {

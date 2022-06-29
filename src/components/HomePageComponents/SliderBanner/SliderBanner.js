@@ -40,7 +40,7 @@ const SliderBanner = () => {
 
                         <SplideSlide >
                             <div className='banner-slider-container'>
-                                <img src="http://unlimited-12ca8.kxcdn.com/media/slideshow/cache/1900x910/wysiwyg/codazon/main-content-26/slideshow02.jpg" alt="Image 1" />
+                                <img src="/images/slideshow02.jpg" alt="Image 1" />
                                 <div className='banner-detail-1'>
                                     <h4>NEW COLLECTION</h4>
                                     <h1 className={state}>HOME DECOR IDEAS</h1>
@@ -52,7 +52,7 @@ const SliderBanner = () => {
                         <SplideSlide>
                             <div className='banner-slider-container'>
 
-                                <img src="http://unlimited-12ca8.kxcdn.com/media/slideshow/cache/1900x910/wysiwyg/codazon/main-content-26/slideshow03.jpg" alt="Image 2" />
+                                <img src="/images/slideshow03.jpg" alt="Image 2" />
                                 <div className='banner-detail-2'>
                                     <h4>MAX LOOKS, MIN PRICES</h4>
                                     <h1 className={state}>MUST-HAVES ARE BACK!</h1>

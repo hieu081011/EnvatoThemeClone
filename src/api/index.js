@@ -21,7 +21,7 @@ export const deleteBlog = (id) => API.delete(`/blog/${id}`)
 
 export const fetchProduct = (id) => API.get(`/product/${id}`)
 export const fetchProducts = () => API.get('/product')
-export const fetchProductsDisplay = (page, type, sort, perPage, increase, gt, lt) => API.get(`/product?page=${page}&type=${type}&sort=${sort}&perPage=${perPage}&increase=${increase}&lt=${lt}&gt=${gt}`)
+export const fetchProductsDisplay = (page, type, sort, perPage, increase, gt, lt, searchQuery) => API.get(`/product?page=${page}&type=${type}&sort=${sort}&perPage=${perPage}&increase=${increase}&lt=${lt}&gt=${gt}&search=${searchQuery}`)
 export const createProduct = (newProduct) => API.post('/product', newProduct)
 export const updateProduct = (id, updatedProduct) => API.patch(`/product/${id}`, updatedProduct)
 export const deleteProduct = (id) => API.delete(`/product/${id}`)

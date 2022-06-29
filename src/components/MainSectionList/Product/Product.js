@@ -22,8 +22,8 @@ const Product = ({ product }) => {
                         <FaRegEye />
                     </button>
                     <Link to={`/${product._id}`}>
-                        <img className='main-img' alt={product.image[0]} src={`http://localhost:5000/image/product/${location}/${product.image[0]}.jpg`} />
-                        <img className='sub-img' alt={product.image[1]} src={`http://localhost:5000/image/product/${location}/${product.image[1]}.jpg`} />
+                        <img className='main-img' alt={product.image[0]} src={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[0]}.jpg`} />
+                        <img className='sub-img' alt={product.image[1]} src={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[1]}.jpg`} />
                     </Link>
 
                 </div>

@@ -9,6 +9,7 @@ import Paginate from '../../components/ProductDetail/ProductDetailComponents/Pag
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductsDisplay } from '../../actions/products'
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner'
 function useQuery() {
     return new URLSearchParams(useLocation().search)
 
@@ -23,11 +24,9 @@ const ProductsPage = () => {
         price: [0, 300.00], switch: true
     })
     const location = useLocation().pathname
-
-
-
     const query = useQuery()
     const dispatch = useDispatch()
+
     let type = ''
     if (location === '/homegarden') {
         type = 'Home Garden'
@@ -38,7 +37,7 @@ const ProductsPage = () => {
     }
     const page = query.get('page') || 1;
     const p = query.get('p')
-    const { products } = useSelector(state => state.productState)
+    const { products, isLoading } = useSelector(state => state.productState)
     useEffect(() => {
         setFilter({ ...filter, price: [0, 300.00] })
     }, [location])
@@ -53,9 +52,28 @@ const ProductsPage = () => {
     useEffect(() => {
 
         if (page) {
-            dispatch(getProductsDisplay(page, type, displayOptions.sort, displayOptions.perPage, displayOptions.increase, filter.price[0], filter.price[1]))
+            dispatch(getProductsDisplay(page, type, displayOptions.sort, displayOptions.perPage, displayOptions.increase, filter.price[0], filter.price[1], location.split('/')[2]))
         }
     }, [dispatch, page, displayOptions, filter.switch, location])
+
+
+    if (!products.length && !isLoading) return (
+        <>
+            <div className='products-page-container'>
+                <div className='main-content'>
+                    <SideBar filter={filter} setFilter={setFilter}></SideBar>
+                    <div className='product-grid'>
+                        <div className='error-message'>
+                            <span><AiFillWarning /></span>
+                            We can't find produtcs matching the selection.
+                        </div>
+                    </div>
+                </div>
+            </div >
+        </>
+    )
+
+
     return (
         <>
             <div className='products-page-container'>
@@ -63,7 +81,10 @@ const ProductsPage = () => {
 
                     <SideBar filter={filter} setFilter={setFilter}></SideBar>
                     <div className='product-grid'>
-                        {products && products.length != 0 ?
+
+                        {isLoading ?
+                            <LoadingSpinner />
+                            :
                             <>
                                 <div className='display-product-options'>
                                     <div>
@@ -100,11 +121,7 @@ const ProductsPage = () => {
                                     </div>
                                 </div>
                             </>
-                            :
-                            <div className='error-message'>
-                                <span><AiFillWarning /></span>
-                                We can't find produtcs matching the selection.
-                            </div>
+
                         }
                     </div>
                 </div>

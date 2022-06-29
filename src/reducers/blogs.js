@@ -1,6 +1,16 @@
 
-export default (blogState = { blogs: [], blog: [] }, action) => {
+export default (blogState = { blogs: [], blog: [], isLoading: false }, action) => {
     switch (action.type) {
+        case 'START LOADING':
+            return {
+                ...blogState,
+                isLoading: true,
+            }
+        case 'END LOADING':
+            return {
+                ...blogState,
+                isLoading: false,
+            }
         case 'FETCH_BLOG':
             return {
                 ...blogState,

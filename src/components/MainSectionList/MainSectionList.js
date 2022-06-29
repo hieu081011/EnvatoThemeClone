@@ -7,7 +7,7 @@ import Product from './Product/Product'
 const MainSectionList = () => {
     const { products } = useSelector(state => state.productState)
 
-    console.log(products)
+
     return (
         <>
             <div className='main-section-list-container'>

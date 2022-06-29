@@ -5,7 +5,8 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import decode from 'jwt-decode';
 import { signin } from '../../../actions/auth'
-
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const LoginSideBar = ({ setLoginModal }) => {
     const [signIn, setSignIn] = useState({ email: '', password: '' })
@@ -14,6 +15,8 @@ const LoginSideBar = ({ setLoginModal }) => {
     const dispatch = useDispatch();
     const location = useLocation()
     const navigate = useNavigate()
+    const { errors } = useSelector(state => state.auth)
+
 
     const logout = () => {
         dispatch({ type: 'LOG OUT' });
@@ -23,6 +26,12 @@ const LoginSideBar = ({ setLoginModal }) => {
 
 
     };
+    const handleKeyPress = (e) => {
+
+        if (e.code === 'Enter') {
+            dispatch(signin(signIn))
+        }
+    }
     useEffect(() => {
         const token = user?.token;
 
@@ -40,7 +49,7 @@ const LoginSideBar = ({ setLoginModal }) => {
             <div onClick={() => { setLoginModal(false) }} className='login-sidebar-background'>
 
             </div>
-            <div className='login-sidebar-container'>
+            <div onKeyDown={(e) => handleKeyPress(e)} className='login-sidebar-container'>
 
                 {user ? (
                     <>
@@ -64,13 +73,18 @@ const LoginSideBar = ({ setLoginModal }) => {
                             <h2>Sign in with Google</h2>
                         </div>
                         <h4>Email</h4>
-                        <input type='text' value={signIn.email} onChange={(e) => { setSignIn({ ...signIn, email: e.target.value }) }} />
+                        <input type='text' value={signIn.email} onChange={(e) => { setSignIn({ ...signIn, email: e.target.value }); dispatch({ type: 'SET ERROR', data: null }) }} />
                         <h4>Password</h4>
-                        <input type='text' value={signIn.passWord} onChange={(e) => { setSignIn({ ...signIn, password: e.target.value }) }} />
-                        <button onClick={() => { dispatch(signin(signIn)); setLoginModal(false); navigate('/'); }}>SIGN IN</button>
+                        <input type='text' value={signIn.passWord} onChange={(e) => { setSignIn({ ...signIn, password: e.target.value }); dispatch({ type: 'SET ERROR', data: null }) }} />
+                        {errors &&
+                            <div className='error-message'>{errors}</div>
+                        }
+                        <button onClick={() => { dispatch(signin(signIn)) }}>SIGN IN</button>
+
                         <a>Forgot Your Password?</a>
+
                         <div className='new-custommer'>
-                            NEW CUSTOMER?<span><a>&nbsp;START HERE.</a></span>
+                            NEW CUSTOMER?<span><Link to='/signup'>&nbsp;START HERE.</Link></span>
                         </div>
                     </>)}
                 <div className='login-menu'>

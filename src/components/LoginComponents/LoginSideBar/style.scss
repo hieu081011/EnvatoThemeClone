@@ -99,6 +99,10 @@
         text-decoration: underline;
         margin: 6px 0 15px;
     }
+    & .error-message{
+        color: rgba($color: red, $alpha: 0.8);
+        margin-bottom: 5px;
+    }
     & >button{
         width: 100%;
         padding: 9px 0;
@@ -119,14 +123,18 @@
         text-align: center;
         color: #A3A3A3;
         font-weight: 600;
-    
+        
         & >span{
-            color: #E1A512;
-            
-            &:hover{
-                color: black;
-                cursor:pointer;
+           
+            & >a {
+                text-decoration: none;
+                color: #E1A512;
+                &:hover{
+                    color: black;
+                    cursor:pointer;
+                }
             }
+            
         }
     }
     & .login-menu{

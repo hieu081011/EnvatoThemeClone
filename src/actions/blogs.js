@@ -1,9 +1,12 @@
 import * as api from '../api'
 export const getBlog = (id) => async (dispatch) => {
     try {
+        dispatch({ type: 'START LOADING' })
         const { data } = await api.fetchBlog(id);
 
+
         dispatch({ type: 'FETCH_BLOG', payload: data })
+        dispatch({ type: 'END LOADING' })
     } catch (error) {
         console.log(error)
     }
@@ -12,9 +15,12 @@ export const getBlog = (id) => async (dispatch) => {
 
 export const getBlogs = (page) => async (dispatch) => {
     try {
+        dispatch({ type: 'START LOADING' })
         const { data } = await api.fetchBlogs(page);
 
+
         dispatch({ type: 'FETCH_ALL', payload: data })
+        dispatch({ type: 'END LOADING' })
     } catch (error) {
         console.log(error)
     }
@@ -22,9 +28,12 @@ export const getBlogs = (page) => async (dispatch) => {
 }
 export const getBlogsBySearch = (searchParams) => async (dispatch) => {
     try {
+        dispatch({ type: 'START LOADING' })
         const { data } = await api.fetchBlogsBySearch(searchParams);
-        dispatch({ type: 'FETCH_BY_SEARCH', payload: data })
 
+
+        dispatch({ type: 'FETCH_BY_SEARCH', payload: data })
+        dispatch({ type: 'END LOADING' })
 
     } catch (error) {
         console.log(error)
@@ -33,6 +42,7 @@ export const getBlogsBySearch = (searchParams) => async (dispatch) => {
 
 export const createBlog = (blog) => async (dispatch) => {
     try {
+
         const { data } = await api.createBlog(blog);
         dispatch({ type: 'CREATE', payload: data })
     } catch (error) {

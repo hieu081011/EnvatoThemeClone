@@ -1,5 +1,6 @@
 
 .banner-slider-wrapper{
+    box-sizing: border-box;
         & .splide__pagination{
             transform:translateY(0px);
             & .is-active{
@@ -129,7 +130,7 @@
 }
 @media all and (max-width:900px) {
     .banner-slider-wrapper{
-        margin-top: 55px;
+        
         & .banner-slider-container{
             & .banner-detail-1{
                 top:30%;

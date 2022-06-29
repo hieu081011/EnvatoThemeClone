@@ -28,50 +28,50 @@ const ShopByCategory = () => {
 
                             <SplideSlide>
                                 <div className='content-detail' >
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate01.png' alt='img   ' />
+                                    <img src='/images/cate01.png' alt='img   ' />
                                     <h2>
                                         <div></div>Sofa Chair</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail' >
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate02.png' alt='img   ' />
+                                    <img src='/images/cate02.png' alt='img   ' />
                                     <h2><div></div>Bathroom</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate03.png' alt='img   ' />
+                                    <img src='/images/cate03.png' alt='img   ' />
                                     <h2><div></div>Decoration</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate08.png' alt='img   ' />
+                                    <img src='/images/cate08.png' alt='img   ' />
                                     <h2><div></div>Lighting</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate05.png' alt='img   ' />
+                                    <img src='/images/cate05.png' alt='img   ' />
                                     <h2><div></div>Funiture</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate06.png' alt='img   ' />
+                                    <img src='/images/cate06.png' alt='img   ' />
                                     <h2><div></div>Tableware</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate07.png' alt='img   ' />
+                                    <img src='/images/cate07.png' alt='img   ' />
                                     <h2><div></div>Bedroom</h2>
                                 </div>
                             </SplideSlide>
                             <SplideSlide>
                                 <div className='content-detail'>
-                                    <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/main-content-26/cate04.png' alt='img   ' />
+                                    <img src='/images/cate04.png' alt='img   ' />
                                     <h2><div></div>Kitchen</h2>
                                 </div>
                             </SplideSlide>

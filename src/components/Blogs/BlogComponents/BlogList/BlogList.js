@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getBlogs } from '../../../../actions/blogs'
 import Paginate from '../../../Paginate/Paginate'
 import { useLocation, useNavigate, Link, useParams } from 'react-router-dom'
-
+import LoadingSpinner from '../../../LoadingSpinner/LoadingSpinner'
 function useQuery() {
     return new URLSearchParams(useLocation().search)
 }
@@ -15,21 +15,22 @@ const BlogList = () => {
     const query = useQuery()
     const dispatch = useDispatch()
     const page = query.get('page') || 1;
-    const { blogs } = useSelector((state) => state.blogState)
+    const { blogs, isLoading } = useSelector((state) => state.blogState)
     const { id: search } = useParams()
-    console.log(search)
+
     const location = useLocation().pathname
     useEffect(() => {
         if (page && location == '/blogs') dispatch(getBlogs(page))
 
     }, [page, location])
 
-    console.log(blogs)
+
+    if (!blogs.length && !isLoading) return 'We cant find any blogs with that tag.';
 
     return (
         <>
             <div className='blogList-container'>
-                {blogs && blogs.map((blog) => (
+                {isLoading ? <LoadingSpinner /> : blogs.map((blog) => (
 
                     <div className='blog-container' key={blog._id}>
                         <div className='blog-img-container' >

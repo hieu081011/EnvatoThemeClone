@@ -3,17 +3,32 @@ import './styles.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaAngleDown, FaHeart, FaCircle, FaUserCircle, FaShoppingBasket, FaSearch } from 'react-icons/fa'
 import { BsSearch, BsGearWideConnected, BsXLg, BsPencilFill } from 'react-icons/bs'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { getCart, deleteInCart } from '../../actions/auth'
 const Header = ({ setLoginModal, loginModal }) => {
     const dispatch = useDispatch()
     const location = useLocation()
+    const navigate = useNavigate()
     const [openSearch, setOpenSearch] = useState(false)
     const [openCart, setOpenCart] = useState(false)
     const user = JSON.parse(localStorage.getItem('profile'));
     const { cart } = useSelector((state) => state.auth)
+    const [searchQuery, setSearchQuery] = useState('')
+
+    const handleSearch = () => {
+
+        navigate(`/search/${searchQuery}`)
+        setOpenSearch(false)
+    }
+    const handleKeyPress = (e) => {
+        if (e.code === 'Enter' && searchQuery !== '') {
+            navigate(`/search/${searchQuery}`)
+            setOpenSearch(false)
+        }
+    }
     useEffect(() => {
         setOpenCart(false)
+        setLoginModal(false)
     }, [location])
     useEffect(() => {
         if (user) {
@@ -89,7 +104,7 @@ const Header = ({ setLoginModal, loginModal }) => {
                 <div className="menu-content">
                     <div className="menu-left">
                         <Link to='/'>
-                            <img src="http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/logo.svg"
+                            <img src="/images/logo.svg"
                                 alt="logo" />
                         </Link>
 
@@ -230,9 +245,9 @@ const Header = ({ setLoginModal, loginModal }) => {
                                 <option>Watches</option>
                             </select>
                         </div>
-                        <input type='text' placeholder='SEARCH ENTIRE STORE HERE...' />
+                        <input value={searchQuery} onKeyDown={(e) => handleKeyPress(e)} onChange={(e) => setSearchQuery(e.target.value)} type='text' placeholder='SEARCH ENTIRE STORE HERE...' />
                         <a><BsGearWideConnected /></a>
-                        <a><span><BsSearch /></span></a>
+                        <a onClick={handleSearch}><span ><BsSearch /></span></a>
                     </div>
                 }
             </div>

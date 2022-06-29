@@ -7,7 +7,7 @@ const MobileHeader = ({ mobileMenu, setMobileMenu }) => {
     useEffect(() => {
 
         mobileMenu ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
-        console.log(mobileMenu)
+
     }, [mobileMenu]);
     return (
         <>

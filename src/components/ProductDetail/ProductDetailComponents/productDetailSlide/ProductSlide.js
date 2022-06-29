@@ -18,13 +18,13 @@ const ProductSlide = () => {
     let location;
     if (product.type == "Home Garden") location = 'homegarden'
     if (product.type == 'Mega Fashion') location = 'megafashion'
-    console.log(location)
+
     useEffect(() => {
         if (mainRef.current && thumbRef.current && thumbRef.current.splide) {
             mainRef.current.sync(thumbRef.current.splide)
         }
     }, [product]);
-    console.log(product)
+
     if (product && product.length == 0) return (null)
     if (product.image.length == 4) {
         var imgsSrc = [
@@ -70,7 +70,7 @@ const ProductSlide = () => {
                             {
                                 imgsSrc.map((imgsrc) => (
 
-                                    <SplideSlide>
+                                    <SplideSlide key={imgsrc}>
                                         <div className="slide-detail">
                                             <img
                                                 onMouseEnter={(e) => {
@@ -139,7 +139,7 @@ const ProductSlide = () => {
                         }}>
                         {
                             thumbImgsSrc.map((imgsrc) => (
-                                <SplideSlide>
+                                <SplideSlide key={imgsrc}>
                                     <div className="img-wrapper">
 
                                         <img src={imgsrc} />

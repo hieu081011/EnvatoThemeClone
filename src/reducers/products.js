@@ -1,6 +1,15 @@
-export default (productState = { products: [], product: [] }, action) => {
+export default (productState = { products: [], product: [], isLoading: false }, action) => {
     switch (action.type) {
-
+        case 'START LOADING':
+            return {
+                ...productState,
+                isLoading: true,
+            }
+        case 'END LOADING':
+            return {
+                ...productState,
+                isLoading: false,
+            }
         case 'FETCH_PRODUCT':
             return {
                 ...productState,

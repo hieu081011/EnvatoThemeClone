@@ -16,7 +16,7 @@ const Paginate = ({ page, urlParams = 'homegarden' }) => {
     const location = useLocation()
     const query = useQuery()
     const p = query.get('p')
-    console.log(location)
+
     const { numberOfPages } = useSelector(state => state.productState)
     return (
         <>

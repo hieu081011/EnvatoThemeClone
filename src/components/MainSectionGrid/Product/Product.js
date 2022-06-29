@@ -24,7 +24,7 @@ const Product = ({ product }) => {
                 <button onClick={() => handleAdd(user.result._id, input, product._id)} >Add to Cart</button>
             </div>
             <Link to={`/${product._id}`}>
-                <CustomImage img1={`http://localhost:5000/image/product${location}/${product.image[0]}.jpg`} img2={`http://localhost:5000/image/product${location}/${product.image[1]}.jpg`} />
+                <CustomImage img1={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[0]}.jpg`} img2={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[1]}.jpg`} />
             </Link>
             <div className='product-content'>
                 <Link to={`/${product._id}`}>{product.name}</Link>

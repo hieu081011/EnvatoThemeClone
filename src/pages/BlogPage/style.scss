@@ -25,7 +25,7 @@
     & .blog-page-content{
         display: grid;
         gap: 20px;
-        width: clamp(0px,1380px,100%);
+        width: clamp(0px,1380px,100% - 1rem);
         grid-template-columns: 10fr 3fr;
     }
 }

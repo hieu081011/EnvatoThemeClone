@@ -3,12 +3,17 @@ import * as api from '../api/index.js';
 export const signin = (formData) => async (dispatch) => {
     try {
         const { data } = await api.signIn(formData);
-        console.log(data)
-        dispatch({ type: 'AUTH', data });
 
+
+        dispatch({ type: 'AUTH', data });
+        window.location.reload(false);
 
     } catch (error) {
-        console.log(error);
+
+
+        dispatch({ type: 'SET ERROR', data: error?.response?.data?.message })
+
+
     }
 };
 
@@ -17,10 +22,10 @@ export const signup = (formData) => async (dispatch) => {
         const { data } = await api.signUp(formData);
 
         dispatch({ type: 'AUTH', data });
-
+        window.location.href('/')
 
     } catch (error) {
-        console.log(error);
+        dispatch({ type: 'SET ERROR', data: error?.response?.data?.message })
     }
 };
 
@@ -28,7 +33,7 @@ export const signup = (formData) => async (dispatch) => {
 export const getCart = (userId) => async (dispatch) => {
     try {
         const { data } = await api.getCart(userId);
-        console.log(data.cart)
+
         dispatch({ type: "UPDATE CART", payload: data.cart })
     } catch (error) {
         console.log(error)

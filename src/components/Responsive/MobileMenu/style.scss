@@ -1,9 +1,10 @@
 .mobileMenu-container{
     width: calc(100vw - 50px);
     min-height: 100vh;
-    display: inline-block;
+    display: block;
     position: fixed;
     top:0;
+    overflow-y: scroll;
     left: 0;
     z-index: 5;
     background-color: white;
@@ -120,7 +121,7 @@
 }
 .mobileMenu-background{
     display: inline-block;
-    position: fixed;
+    position: fixed ;
     top:0;
     right: 0;
     z-index: 6;

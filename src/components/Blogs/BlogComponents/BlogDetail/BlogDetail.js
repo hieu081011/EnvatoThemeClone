@@ -6,19 +6,11 @@ import { useLocation, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { getBlog } from '../../../../actions/blogs'
 
-const BlogDetail = ({ setTitle }) => {
-    window.scrollTo(0, 0);
-    const { blog } = useSelector((state) => state.blogState)
-    const dispatch = useDispatch()
-    const { id } = useParams()
+const BlogDetail = ({ blog }) => {
 
-    useEffect(() => {
+    // const { blog, isLoading } = useSelector((state) => state.blogState)
 
-        dispatch(getBlog(id))
 
-    }
-        , [dispatch, id])
-    if (!blog) return (null)
     return (
         <>
 

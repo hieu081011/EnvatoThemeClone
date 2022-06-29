@@ -25,9 +25,11 @@ const App = () => {
     return (
         <>
             <BrowserRouter>
-                <div >
 
+                <div >
                     <MobileMenu setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
+
+
                     <div id="page-container" className={loginModal || mobileMenu ? 'transition-whole-page-active' : undefined}>
 
 
@@ -45,9 +47,9 @@ const App = () => {
                             <Route path='/megafashion' element={<ProductsPage />} />
                             <Route path='/brands' element={<ProductsPage />} />
                             <Route path='/:productId' element={<ProductDetailPage />} />
-
+                            <Route path='/search/:searchQuery' element={<ProductsPage />} />
                             <Route path='/login' element={!user ? <LoginPage /> : <Navigate replace to='/' />} />
-                            <Route path='/signup' element={<RegisterPage />} />
+                            <Route path='/signup' element={!user ? <RegisterPage /> : <Navigate replace to='/' />} />
                             <Route path='/checkout' element={<CheckOut />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>

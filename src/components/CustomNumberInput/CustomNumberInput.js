@@ -13,7 +13,7 @@ class CustomNumberInput extends React.Component {
     };
 
     onChange = value => {
-        console.log(Number(value))
+
         if (Number(value) < 0) {
             this.props.setInput(1)
         }

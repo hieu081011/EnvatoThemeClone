@@ -49,6 +49,12 @@
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            & .error-message{
+                margin-bottom: 5px;
+                margin-top: -10px;
+                color: rgba($color: red, $alpha: 0.8);
+                
+            }
             & >h2{
                 font-size: 1.1rem;
                 font-weight: 600;
@@ -68,7 +74,7 @@
                     margin-left: 3px;
                 }
             }
-            & >input[type=text]{
+            & >input[type=text], >input[type=password]{
                 border:solid 1px #E1E1E1;
                 width: 91%;
                 padding: 5px 12px;

@@ -4,8 +4,9 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
+    width: 100%;
     & .main-content{
-        width: clamp(0px,1380px,100%);
+        width: clamp(0px,1380px,100vw - 1rem);
         display: grid;
         grid-template-columns: 1fr 3.1fr ;
         gap:3%;

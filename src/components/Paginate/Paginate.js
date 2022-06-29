@@ -21,12 +21,12 @@ const Paginate = ({ page }) => {
                     pageRangeDisplayed={5}
                     marginPagesDisplayed={0}
                     forcePage={Number(page) - 1 || 0}
-                    pageCount={Number(numberOfPages)}
+                    pageCount={Number(numberOfPages) || 1}
                     previousLabel={< AiOutlineLeft />}
                     renderOnZeroPageCount={null}
                     breakLabel={''}
                     onClick={(clickEvent) => {
-                        console.log(clickEvent.nextSelectedPage + 1)
+
                         !isNaN(clickEvent.nextSelectedPage) && navigate(`/blogs?page=${clickEvent.nextSelectedPage + 1}`)
                         window.scrollTo(0, 150);
                         // Return false to prevent standard page change,
