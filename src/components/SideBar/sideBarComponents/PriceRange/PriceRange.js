@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './style.scss'
 import { FaAngleDown } from 'react-icons/fa';
 import { Slider } from "@material-ui/core";
@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 
 const PriceRange = ({ filter, setFilter }) => {
-    const [value, setValue] = React.useState([10.00, 30.00]);
+
     const [rotate, setRotate] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()

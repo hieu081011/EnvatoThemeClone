@@ -1,13 +1,13 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import './style.scss'
 import { FaSearch } from 'react-icons/fa'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { getBlogsBySearch } from '../../../../actions/blogs'
 import { useNavigate, useParams, Link, useLocation } from 'react-router-dom'
 
 const BlogSideBar = () => {
-    var dropDownNumber = 0;
-    const [dropDown, setDropDown] = useState([, , , , , , true, , , , , , true, true, true, , , true])
+
+    const [dropDown, setDropDown] = useState([true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true])
     const [search, setSearch] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -32,7 +32,7 @@ const BlogSideBar = () => {
 
 
 
-    }, [location])
+    }, [dispatch, location])
     const handlePresskey = (e) => {
         if (e.keyCode === 13) {
             setSearch(e.target.value)
@@ -64,7 +64,7 @@ const BlogSideBar = () => {
                                         <>
                                             <span onClick={() => setDropDown(dropDown.map((item, index) => ((index === i) ? (item = !item) : item)))}>-</span>
                                             <ul>
-                                                {category.map((listItem, index) => (index == 0 ? null :
+                                                {category.map((listItem, index) => (index === 0 ? null :
                                                     <li><Link to={`/blogs/category/${listItem}`} onClick={() => dispatch(getBlogsBySearch(`${listItem}`))}>{listItem}</Link></li>
                                                 ))}
 
@@ -87,7 +87,7 @@ const BlogSideBar = () => {
                     </div>
                     <div className='recent-post'>
                         <div className='img-container'>
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog012.jpg' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog012.jpg' alt='blog12' />
 
                         </div>
                         <h2>Kitchens and Bathrooms</h2>
@@ -95,7 +95,7 @@ const BlogSideBar = () => {
                     </div>
                     <div className='recent-post'>
                         <div className='img-container'>
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog022.jpg' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog022.jpg' alt='blog22' />
 
                         </div>
                         <h2>Kitchens and Bathrooms</h2>
@@ -103,7 +103,7 @@ const BlogSideBar = () => {
                     </div>
                     <div className='recent-post'>
                         <div className='img-container'>
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog032.jpg' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog032.jpg' alt='blog32' />
 
                         </div>
                         <h2>Kitchens and Bathrooms</h2>
@@ -111,7 +111,7 @@ const BlogSideBar = () => {
                     </div>
                     <div className='recent-post'>
                         <div className='img-container'>
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog042.jpg' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/blog/cache/276x/magefan_blog/blog042.jpg' alt='blog42' />
 
                         </div>
                         <h2>Kitchens and Bathrooms</h2>

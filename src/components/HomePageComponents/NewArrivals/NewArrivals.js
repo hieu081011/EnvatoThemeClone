@@ -2,7 +2,7 @@ import React from 'react'
 import './style.scss'
 import CustomImage from '../../CustomImage/CustomImage'
 import CustomNumberInput from '../../CustomNumberInput/CustomNumberInput'
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/skyblue';
 const NewArrivals = () => {
     return (

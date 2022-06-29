@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import './style.scss'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CustomImage from '../../CustomImage/CustomImage'
 import CustomNumberInput from '../../CustomNumberInput/CustomNumberInput'
 import { addToCart } from '../../../actions/auth'
 import { useDispatch } from 'react-redux'
 const Product = ({ product }) => {
-    const location = useLocation().pathname
+
     const dispatch = useDispatch()
     const [input, setInput] = useState(1)
     const user = JSON.parse(localStorage.getItem('profile'));
@@ -24,7 +24,7 @@ const Product = ({ product }) => {
                 <button onClick={() => handleAdd(user.result._id, input, product._id)} >Add to Cart</button>
             </div>
             <Link to={`/${product._id}`}>
-                <CustomImage img1={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[0]}.jpg`} img2={`http://localhost:5000/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[1]}.jpg`} />
+                <CustomImage img1={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[0]}.jpg`} img2={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[1]}.jpg`} />
             </Link>
             <div className='product-content'>
                 <Link to={`/${product._id}`}>{product.name}</Link>

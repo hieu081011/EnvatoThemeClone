@@ -34,9 +34,9 @@ const ProductDetailContent = () => {
                 <div className={dropDown ? 'product-shipping' : 'product-shipping active'}>
                     <div className="product-shipping-header">
                         <div className="header-1">
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/codazon/themelayout/images/truck-icon.png' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/codazon/themelayout/images/truck-icon.png' alt='truck-icon' />
                             SHIP TO
-                            <img src='http://unlimited-12ca8.kxcdn.com/media/codazon/flags/us.jpg' />
+                            <img src='http://unlimited-12ca8.kxcdn.com/media/codazon/flags/us.jpg' alt='flag-us' />
                         </div>
                         <div onClick={() => (setDropDown(!dropDown))} className="header-2">
                             Calculate Shipping Cost

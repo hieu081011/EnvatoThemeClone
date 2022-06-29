@@ -10,22 +10,22 @@ const ProductDetailTabs = () => {
                 <div className='header-container'>
                     <h2
                         onClick={() => (setTabState(1))}
-                        className={tabState == 1 ? 'active' : ''}>
+                        className={tabState === 1 ? 'active' : ''}>
                         DETAILS
                     </h2>
                     <h2
                         onClick={() => (setTabState(2))}
-                        className={tabState == 2 ? 'active' : ''}>
+                        className={tabState === 2 ? 'active' : ''}>
                         REVIEWS
                     </h2>
                     <h2
                         onClick={() => (setTabState(3))}
-                        className={tabState == 3 ? 'active' : ''}>
+                        className={tabState === 3 ? 'active' : ''}>
                         CUSTOM TAB 1
                     </h2>
                     <h2
                         onClick={() => (setTabState(4))}
-                        className={tabState == 4 ? 'active' : ''}>
+                        className={tabState === 4 ? 'active' : ''}>
                         CUSTOM TAB 2
                     </h2>
                 </div>
@@ -105,7 +105,7 @@ const ProductDetailTabs = () => {
 
 
                     </div>
-                    <div className={tabState == 1 ? 'btn-wrapper active' : 'btn-wrapper'}>
+                    <div className={tabState === 1 ? 'btn-wrapper active' : 'btn-wrapper'}>
                         {contentDown ? <button onClick={() => (setContentDown(!contentDown))}><FaRegMinusSquare />&nbsp;LESS VIEW</button> : <button onClick={() => (setContentDown(!contentDown))}><FaRegPlusSquare />&nbsp;MORE VIEW</button>}
 
                     </div>

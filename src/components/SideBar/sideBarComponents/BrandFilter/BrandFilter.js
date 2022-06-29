@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './style.scss'
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 const BrandFilter = () => {
-    const [logoList, setLogoList] = useState([
+    const logoList = [
         {
             logo1: 'britax',
             logo1src: 'http://unlimited-12ca8.kxcdn.com/media/codazon_cache/brand/150x150/wysiwyg/codazon/Brand/britax-logo.jpg',
@@ -75,7 +75,7 @@ const BrandFilter = () => {
             logo3: '',
             logo3src: ''
         },
-    ])
+    ]
     return (
         <>
             <div className='brand-filter-wrapper'>
@@ -95,13 +95,13 @@ const BrandFilter = () => {
                             <SplideSlide key={item.logo1}>
                                 <div className='slide-content'>
                                     <a>
-                                        <img src={item.logo1src} />
+                                        <img src={item.logo1src} alt='item.logo1src' />
                                     </a>
                                     <a>
-                                        <img src={item.logo2src} />
+                                        <img src={item.logo2src} alt='item.logo2src' />
                                     </a>
                                     <a>
-                                        <img src={item.logo3src} />
+                                        <img src={item.logo3src} alt='item.logo3src' />
                                     </a>
                                 </div>
                             </SplideSlide>

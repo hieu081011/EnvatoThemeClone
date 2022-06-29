@@ -3,16 +3,16 @@ import './style.scss'
 import { useSelector } from 'react-redux'
 import { signin } from '../../../actions/auth'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+
 
 const LoginPage = () => {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+
     const { errors } = useSelector(state => state.auth)
     const [signIn, setSignIn] = useState({ email: '', password: '' })
     const [showPassword, setShowPassword] = useState(false)
     const handleKeyPress = (e) => {
-        console.log(e)
+
         if (e.code === 'Enter') {
             dispatch(signin(signIn))
         }
@@ -23,7 +23,7 @@ const LoginPage = () => {
             <div className='login-page-container' >
                 <h1 className='login-page-header'>CUSTOMER LOGIN</h1>
                 <div className='sign-in-google-button'>
-                    <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' /></span>
+                    <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' alt='google-button' /></span>
                     <h2>Sign in with Google</h2>
                 </div>
                 <div className='login-form' onKeyDown={(e) => handleKeyPress(e)}>

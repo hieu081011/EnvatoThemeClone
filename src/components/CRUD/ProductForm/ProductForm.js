@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import './style.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProducts, createProduct, updateProduct, deleteProduct, getProductsDisplay } from '../../../actions/products'
+import { createProduct, updateProduct, deleteProduct, getProductsDisplay } from '../../../actions/products'
 const ProductForm = () => {
     const [productData, setProductData] = useState({
         name: '', type: 'Mega Fashion', overView: '', category: '', sku: 'megafashion_04', manufacturer: '', price: 0, sale: 0, size: [], color: '', image: [], brand: '',
@@ -78,7 +78,7 @@ const ProductForm = () => {
                     <div>{index + 1}</div>
                     <div>{product._id}</div>
                     <div>{product.name}</div>
-                    <div>{Array.isArray(product.image) == true ? product.image.join(',') : product.image}</div>
+                    <div>{Array.isArray(product.image) === true ? product.image.join(',') : product.image}</div>
                     <div>
                         <button
                             onClick={() => {

@@ -5,8 +5,7 @@ import InfoSlider from '../../components/HomePageComponents/InfoSlider/InfoSlide
 import './style.scss'
 import TopDeals from "../../components/HomePageComponents/TopDeals/TopDeals";
 
-import Footer from '../../components/Footer/Footer'
-import Header from '../../components/Header/Header'
+
 import Banner5Pic from '../../components/HomePageComponents/Banner5Pic/Banner5Pic'
 import StayInformed from '../../components/HomePageComponents/StayInfomred/StayInformed'
 import LogoSlider from "../../components/HomePageComponents/LogoSlider/LogoSlider";

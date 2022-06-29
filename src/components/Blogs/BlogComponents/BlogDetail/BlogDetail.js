@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './style.scss'
-import { FaClock, FaFacebookSquare, FaTwitterSquare, FaEnvelopeSquare, FaPlusSquare, FaAngleDoubleRight } from 'react-icons/fa'
+import { FaClock, FaFacebookSquare, FaTwitterSquare, FaEnvelopeSquare, FaPlusSquare, } from 'react-icons/fa'
 import { AiOutlineFolder, AiOutlineUser } from 'react-icons/ai'
-import { useLocation, useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { getBlog } from '../../../../actions/blogs'
+
 
 const BlogDetail = ({ blog }) => {
 
@@ -18,7 +16,7 @@ const BlogDetail = ({ blog }) => {
 
                 <div className='blog-detail-img-container'>
 
-                    <img src={blog.image && `http://localhost:5000/image/blog/${blog.image}.jpg`} />
+                    <img src={blog.image && `https://evento-clone-project.herokuapp.com/image/blog/${blog.image}.jpg`} alt={blog.image} />
                     <div className='buttons-container'>
                         <div className='date-tags'>
                             <div className='date'>
@@ -31,10 +29,10 @@ const BlogDetail = ({ blog }) => {
                             </div>
                         </div>
                         <div className='share-buttons'>
-                            <a style={{ color: '#3B5998' }}><FaFacebookSquare /></a>
-                            <a style={{ color: '#1DA1F2' }}><FaTwitterSquare /></a>
-                            <a style={{ color: '#848484' }}><FaEnvelopeSquare /></a>
-                            <a style={{ color: '#FF6550' }}><FaPlusSquare /></a>
+                            <a href='#' style={{ color: '#3B5998' }}><FaFacebookSquare /></a>
+                            <a href='#' style={{ color: '#1DA1F2' }}><FaTwitterSquare /></a>
+                            <a href='#' style={{ color: '#848484' }}><FaEnvelopeSquare /></a>
+                            <a href='#' style={{ color: '#FF6550' }}><FaPlusSquare /></a>
                         </div>
                     </div>
                 </div>

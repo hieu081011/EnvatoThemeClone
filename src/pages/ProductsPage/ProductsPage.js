@@ -88,8 +88,8 @@ const ProductsPage = () => {
                             <>
                                 <div className='display-product-options'>
                                     <div>
-                                        <button className={displayOptions.main == 'grid' ? 'active' : null} onClick={() => (setDisplayOptions({ ...displayOptions, main: 'grid' }))}><BsFillGrid3X3GapFill /></button>
-                                        <button className={displayOptions.main == 'list' ? 'active' : null} onClick={() => (setDisplayOptions({ ...displayOptions, main: 'list' }))}><BsFillGrid1X2Fill /></button>
+                                        <button className={displayOptions.main === 'grid' ? 'active' : null} onClick={() => (setDisplayOptions({ ...displayOptions, main: 'grid' }))}><BsFillGrid3X3GapFill /></button>
+                                        <button className={displayOptions.main === 'list' ? 'active' : null} onClick={() => (setDisplayOptions({ ...displayOptions, main: 'list' }))}><BsFillGrid1X2Fill /></button>
                                         <span>10 items</span>
                                     </div>
                                     <div>
@@ -106,7 +106,7 @@ const ProductsPage = () => {
 
                                     </div>
                                 </div>
-                                {displayOptions.main == 'grid' ? <MainSection /> : <MainSectionList />}
+                                {displayOptions.main === 'grid' ? <MainSection /> : <MainSectionList />}
 
                                 <div className='showPerPage-option'>
                                     <div><Paginate page={page} /></div>

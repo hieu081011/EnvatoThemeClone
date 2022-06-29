@@ -1,9 +1,9 @@
-import react, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './style.scss'
-import { Splide, SplideSlide, SplideTrack, SplideEventHandlers } from '@splidejs/react-splide'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/skyblue';
 
-import { FaAngleRight } from 'react-icons/fa';
+
 
 
 const SliderBanner = () => {
@@ -13,7 +13,7 @@ const SliderBanner = () => {
         setState('')
     }
     useEffect(() => {
-        if (state == '') {
+        if (state === '') {
             setState('animated')
         }
     }, [state])
@@ -40,7 +40,7 @@ const SliderBanner = () => {
 
                         <SplideSlide >
                             <div className='banner-slider-container'>
-                                <img src="/images/slideshow02.jpg" alt="Image 1" />
+                                <img src="/images/slideshow02.jpg" alt="silde02" />
                                 <div className='banner-detail-1'>
                                     <h4>NEW COLLECTION</h4>
                                     <h1 className={state}>HOME DECOR IDEAS</h1>
@@ -52,7 +52,7 @@ const SliderBanner = () => {
                         <SplideSlide>
                             <div className='banner-slider-container'>
 
-                                <img src="/images/slideshow03.jpg" alt="Image 2" />
+                                <img src="/images/slideshow03.jpg" alt="slide03" />
                                 <div className='banner-detail-2'>
                                     <h4>MAX LOOKS, MIN PRICES</h4>
                                     <h1 className={state}>MUST-HAVES ARE BACK!</h1>

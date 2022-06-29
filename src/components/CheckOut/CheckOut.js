@@ -50,7 +50,7 @@ const CheckOut = () => {
                     <div className='item-display'>
                         <div className='table-title'>
                             <h4>ITEM</h4>
-                            <h4></h4>
+                            <h4>&nbsp;</h4>
                             <h4>PRICE</h4>
                             <h4>QTY</h4>
                             <h4>SUBTOTAL</h4>
@@ -60,7 +60,7 @@ const CheckOut = () => {
 
                                 <div className='product'>
                                     <Link className='product-image' to={`/${product.productId}`}>
-                                        <img src={`http://localhost:5000/image/product/${product.type == 'Mega Fashion' ? `megafashion` : `homegarden`}/${product && product.image[0]}.jpg`} />
+                                        <img alt={product.productId} src={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Mega Fashion' ? `megafashion` : `homegarden`}/${product && product.image[0]}.jpg`} />
                                     </Link>
 
                                     <Link className='product-title' to={`/${product.productId}`}>

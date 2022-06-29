@@ -8,8 +8,8 @@ const CustomImage = ({ img1 = 'http://unlimited-12ca8.kxcdn.com/media/catalog/pr
         <>
             <div className='customImage-container'>
                 <div className='image-container'>
-                    <img className='first-img' src={img2} />
-                    <img src={`${img1}`} />
+                    <img className='first-img' alt='customImage1' src={img2} />
+                    <img alt='customImage2' src={`${img1}`} />
                     <div className='button-container'>
                         <button><TiHeartOutline /></button>
                         <button className='second-button'><TiArrowSync /></button>

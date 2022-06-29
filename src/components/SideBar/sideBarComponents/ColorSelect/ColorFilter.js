@@ -4,7 +4,7 @@ import { FaAngleDown } from 'react-icons/fa'
 
 const ColorFilter = () => {
     const [rotate, setRotate] = useState(true)
-    const [colorList, setColorList] = useState([
+    const colorList = [
         { label: 'Black', hex: '#000000' },
         { label: 'Dark Blue', hex: '#0C014D' },
         { label: 'Yellow', hex: '#FFFF21' },
@@ -27,7 +27,7 @@ const ColorFilter = () => {
         { label: 'Khaki', hex: '#E19B12' },
         { label: 'White', hex: '#FFFFFF' },
 
-    ])
+    ]
     return (
         <>
             <div className={rotate ? 'colorFilter-wrapper' : 'colorFilter-wrapper rotate'}>

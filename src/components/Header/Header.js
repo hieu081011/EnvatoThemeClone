@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './styles.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { FaAngleDown, FaHeart, FaCircle, FaUserCircle, FaShoppingBasket, FaSearch } from 'react-icons/fa'
+import { FaAngleDown, FaHeart, FaUserCircle, FaShoppingBasket, } from 'react-icons/fa'
 import { BsSearch, BsGearWideConnected, BsXLg, BsPencilFill } from 'react-icons/bs'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { getCart, deleteInCart } from '../../actions/auth'
@@ -36,7 +36,7 @@ const Header = ({ setLoginModal, loginModal }) => {
         }
     }, [])
     useEffect(() => {
-        loginModal == true ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
+        loginModal === true ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'unset';
     }, [loginModal]);
 
     return (
@@ -47,7 +47,7 @@ const Header = ({ setLoginModal, loginModal }) => {
                 </div>
                 <div className="right-content">
                     <button type="button">USD-US Dollar <FaAngleDown /> </button>
-                    <button type="button"> <img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_en.gif' />English<FaAngleDown />
+                    <button type="button"> <img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_en.gif' alt='flag' />English<FaAngleDown />
                     </button>
                     <button type="button"><FaHeart />Wish List</button>
                     <button type="button" onClick={() => { setLoginModal(true) }}><FaUserCircle />Your Account</button>
@@ -70,7 +70,7 @@ const Header = ({ setLoginModal, loginModal }) => {
                                                         </div>
                                                         <Link to={`/${product.productId}`} className='image-container'>
 
-                                                            <img src={`http://localhost:5000/image/product/${product.type == 'Mega Fashion' ? `megafashion` : `homegarden`}/${product.image[0]}.jpg`} />
+                                                            <img alt={product.productId} src={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Mega Fashion' ? `megafashion` : `homegarden`}/${product.image[0]}.jpg`} />
                                                             <div >{product.name}</div>
                                                         </Link>
 

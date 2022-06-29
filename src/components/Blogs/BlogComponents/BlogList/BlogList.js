@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import './style.scss'
-import { FaFacebookSquare, FaTwitterSquare, FaEnvelopeSquare, FaPlusSquare, FaAngleDoubleRight, FaTag } from 'react-icons/fa'
+import { FaFacebookSquare, FaTwitterSquare, FaEnvelopeSquare, FaPlusSquare, FaAngleDoubleRight } from 'react-icons/fa'
 import { AiOutlineFolder, AiOutlineUser, AiFillTag } from 'react-icons/ai'
 import { useSelector, useDispatch } from 'react-redux'
 import { getBlogs } from '../../../../actions/blogs'
 import Paginate from '../../../Paginate/Paginate'
-import { useLocation, useNavigate, Link, useParams } from 'react-router-dom'
+import { useLocation, Link, useParams } from 'react-router-dom'
 import LoadingSpinner from '../../../LoadingSpinner/LoadingSpinner'
 function useQuery() {
     return new URLSearchParams(useLocation().search)
@@ -20,9 +20,9 @@ const BlogList = () => {
 
     const location = useLocation().pathname
     useEffect(() => {
-        if (page && location == '/blogs') dispatch(getBlogs(page))
+        if (page && location === '/blogs') dispatch(getBlogs(page))
 
-    }, [page, location])
+    }, [dispatch, page, location])
 
 
     if (!blogs.length && !isLoading) return 'We cant find any blogs with that tag.';
@@ -35,7 +35,7 @@ const BlogList = () => {
                     <div className='blog-container' key={blog._id}>
                         <div className='blog-img-container' >
                             <Link to={`/blogs/${blog._id}`}>
-                                <img src={`http://localhost:5000/image/blog/${blog.image}.jpg`} />
+                                <img alt={blog.image} src={`https://evento-clone-project.herokuapp.com/image/blog/${blog.image}.jpg`} />
                             </Link>
 
                         </div>
@@ -59,10 +59,10 @@ const BlogList = () => {
                                 </Link>
 
                                 <div className='shareButtons'>
-                                    <a style={{ color: '#3B5998' }}><FaFacebookSquare /></a>
-                                    <a style={{ color: '#1DA1F2' }}><FaTwitterSquare /></a>
-                                    <a style={{ color: '#848484' }}><FaEnvelopeSquare /></a>
-                                    <a style={{ color: '#FF6550' }}><FaPlusSquare /></a>
+                                    <a href='#' tyle={{ color: '#3B5998' }}><FaFacebookSquare /></a>
+                                    <a href='#' style={{ color: '#1DA1F2' }}><FaTwitterSquare /></a>
+                                    <a href='#' style={{ color: '#848484' }}><FaEnvelopeSquare /></a>
+                                    <a href='#' style={{ color: '#FF6550' }}><FaPlusSquare /></a>
                                 </div>
                             </div>
                         </div>

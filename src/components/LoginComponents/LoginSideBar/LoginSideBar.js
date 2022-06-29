@@ -69,7 +69,7 @@ const LoginSideBar = ({ setLoginModal }) => {
                     <>
 
                         <div className='sign-in-google-button'>
-                            <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' /></span>
+                            <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' alt='google-button' /></span>
                             <h2>Sign in with Google</h2>
                         </div>
                         <h4>Email</h4>
@@ -94,14 +94,14 @@ const LoginSideBar = ({ setLoginModal }) => {
                     <a><span><FaListAlt /></span>MY ORDERS</a>
                     <a><span><FaRegEnvelope /></span>CONTACT US</a>
                     <div onClick={() => (setDropDown(dropDown.map((item, index) => (index === 0 ? (item = !item) : (item)))))}>
-                        <span><img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_en.gif' /></span>
+                        <span><img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_en.gif' alt='flag-store' /></span>
                         <div>
                             ENGLISH
                             {dropDown[0] ?
                                 <><span ><FaCaretDown /></span></> :
                                 <><span ><FaCaretUp /></span>
                                     <ul>
-                                        <li><span style={{ marginRight: '10px' }}><img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_ar.gif' />
+                                        <li><span style={{ marginRight: '10px' }}><img src='http://unlimited-12ca8.kxcdn.com/static/version1652433738/frontend/Codazon/unlimited_home_decor/en_US/images/flags/flag_store26_ar.gif' alt='flag-store26' />
                                         </span>RTL</li>
                                     </ul></>
                             }

@@ -86,7 +86,7 @@ const Footer = () => {
                     </div>
                     <div>&copy; 2018 Codazon Ltd. Trademarks and brands</div>
                     <div className='footer-4_3'>
-                        <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/footer-payment.png' />
+                        <img src='http://unlimited-12ca8.kxcdn.com/media/wysiwyg/codazon/footer-payment.png' alt='footer-payment' />
                     </div>
                 </div>
             </div>

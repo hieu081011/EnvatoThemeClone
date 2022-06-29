@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './style.scss'
 import ReactPaginate from 'react-paginate';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import { useDispatch, useSelector } from 'react-redux';
-import { getBlogs } from '../../actions/blogs'
+import { useSelector } from 'react-redux';
+
 import { useNavigate } from 'react-router-dom';
 
 const Paginate = ({ page }) => {
-    const dispatch = useDispatch();
+
     const navigate = useNavigate()
     const { numberOfPages } = useSelector((state) => state.blogState)
 

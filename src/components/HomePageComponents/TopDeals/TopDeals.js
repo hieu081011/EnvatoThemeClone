@@ -1,6 +1,6 @@
 import React from "react";
 import './style.scss'
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
+import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/skyblue'
 import CustomImage from "../../CustomImage/CustomImage";
 import CustomNumberInput from "../../CustomNumberInput/CustomNumberInput";

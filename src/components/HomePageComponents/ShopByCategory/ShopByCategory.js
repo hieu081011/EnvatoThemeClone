@@ -1,5 +1,5 @@
 import React from 'react'
-import { Splide, SplideSlide, SplideTrack, SplideEventHandlers } from '@splidejs/react-splide'
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css/skyblue';
 import './style.scss'
 const ShopByCategory = () => {

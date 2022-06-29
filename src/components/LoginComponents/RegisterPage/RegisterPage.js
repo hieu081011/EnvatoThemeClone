@@ -45,7 +45,7 @@ const RegisterPage = () => {
             <div className='register-page-container'>
                 <h1 className='register-page-header'>CREATE A NEW CUSTOMER ACCOUNT</h1>
                 <div className='sign-in-google-button'>
-                    <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' /></span>
+                    <span><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyU-vKkotKnnOccXJivwxoqKMRsODneNTVrp6zGTYDhQ&s' alt='gg button' /></span>
                     <h2>Sign in with Google</h2>
                 </div>
                 <div className='register-form' onKeyDown={(e) => handleKeyPress(e)} tabIndex='0'>

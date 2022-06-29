@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './style.scss'
 import ReactPaginate from 'react-paginate';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 function useQuery() {
@@ -11,7 +11,7 @@ function useQuery() {
 }
 
 const Paginate = ({ page, urlParams = 'homegarden' }) => {
-    const dispatch = useDispatch();
+
     const navigate = useNavigate()
     const location = useLocation()
     const query = useQuery()

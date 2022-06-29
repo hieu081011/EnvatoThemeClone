@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './style.scss'
-import { useSelector } from 'react-redux'
+
 import BlogList from '../../components/Blogs/BlogComponents/BlogList/BlogList'
 import BlogSideBar from '../../components/Blogs/BlogComponents/BlogSideBar/BlogSideBar'
 import { useLocation, useParams } from 'react-router-dom'

@@ -8,12 +8,12 @@ const MobibleFooter = () => {
 
 
             <div className='mobile-footer-container'>
-                <a><BsHouseFill /></a>
+                <a href='/'><BsHouseFill /></a>
                 <button><BsSearch /></button>
                 <div className='cart-button'>
                     <span><BsCart3 /></span>
                 </div>
-                <a><FaRegUser /></a>
+                <a href='/'><FaRegUser /></a>
                 <div>
                     <div></div>
                     <div></div>
