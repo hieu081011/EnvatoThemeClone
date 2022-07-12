@@ -21,10 +21,13 @@ const Product = ({ product }) => {
                     <button>
                         <FaRegEye />
                     </button>
+
+
                     <Link to={`/${product._id}`}>
                         <img className='main-img' alt={product.image[0]} src={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[0]}.jpg`} />
                         <img className='sub-img' alt={product.image[1]} src={`https://evento-clone-project.herokuapp.com/image/product/${product.type === 'Home Garden' ? 'homegarden' : 'megafashion'}/${product.image[1]}.jpg`} />
                     </Link>
+
 
                 </div>
                 <div className='product-detail'>
