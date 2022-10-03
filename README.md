@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Project Demo: https://master--peppy-cobbler-93457d.netlify.app/
 
+Cloned Site: http://magento2-unlimited.codazon.com/store26_en/?fbclid=IwAR21kxVHu4w2t2xjM6hT2X0CvzCZLat7aOFy26M9G62RI3IbuzfuF0SLl1k
+
 ## Available Scripts
 
 In the project directory, you can run:
