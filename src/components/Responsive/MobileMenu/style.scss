@@ -1,11 +1,11 @@
 .mobileMenu-container{
     width: calc(100vw - 50px);
-    min-height: 100vh;
+    height: 100vh;
     display: block;
     position: fixed;
     top:0;
-    overflow-y: scroll;
     left: 0;
+    overflow: auto;
     z-index: 5;
     background-color: white;
     transform: translateX(calc(0px - 100vw));
